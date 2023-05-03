@@ -24,15 +24,27 @@
 <body <?php body_class(); ?>>
 
 
-  <header class="header u-unselectable">
-		<div class="header-top">
-			<div class="header-brand">
-				<div class="nav-item no-hover"><a href="<?php echo get_home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo.png" id="nav-logo" alt="Tree story logo" /></a></div>
-				<div class="nav-item nav-btn" id="header-btn"><span></span><span></span><span></span></div>
+  <header class="header">
+	</header>
+	<div class="container-fluid bg-orange text-white">
+		<div class="row">
+			<div class="col-md-6 text-center ">
+				<img class="img-fluid m-5" src="<?php echo get_theme_file_uri() ?>/dist/img/logo-header.png" alt="">
+				<a class="border border-white p-4 d-inline-block" href="">
+					<span class="text-uppercase font-spacing">Comprar Entradas</span>
+				</a>
 			</div>
-			<div class="header-nav" id="header-menu">
-				<?php foundationpress_main_nav(); ?>
+			<div class="col-md-6 text-center">
+				<h2 class="font-weight-normal mt-5">"Frase sobre el evento"</h2>
+				<h2 class="font-weight-bold">Bitcoin Mag</h2>
 			</div>
 		</div>
-    <div class="dropdown-background"></div>
-	</header>
+		<div class="row">
+			<div class="col-md-12">
+			<img class="img-fluid" src="<?php echo get_theme_file_uri() ?>/dist/img/ilust.png" alt="">
+			</div>
+		</div>
+
+	</div>
+	
+	

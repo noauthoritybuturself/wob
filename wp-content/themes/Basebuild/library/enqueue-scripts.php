@@ -45,6 +45,9 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		// Enque Font Awesome
 		wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', array(), '1.0.0', 'all' );
 
+		// Bootstrap
+		wp_enqueue_style( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css', array(), '1.0.0', 'all' );
+
 		// Enque swiffy style
 		wp_enqueue_style( 'swiffy', 'https://cdn.jsdelivr.net/npm/swiffy-slider@1.5.3/dist/css/swiffy-slider.min.css', array(), '1.5.3', 'all' );
 
@@ -62,6 +65,11 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 
 		// Swiffy js
 		wp_enqueue_script( 'swiffy', 'https://cdn.jsdelivr.net/npm/swiffy-slider@1.5.3/dist/js/swiffy-slider.min.js', array(), '1.5.3', false );
+		
+		
+		wp_enqueue_script( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', array(), '5.0.2', false );
+	
+
 		
 		// Add the comment-reply library on pages where it is necessary
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
