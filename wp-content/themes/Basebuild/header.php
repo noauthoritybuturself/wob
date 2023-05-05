@@ -39,12 +39,11 @@
 				<h2 class="font-weight-bold">Bitcoin Mag</h2>
 			</div>
 		</div>
+		<div class="row background-image"></div>
 		<div class="row">
-			<div class="col-md-12">
-			<img class="img-fluid" src="<?php echo get_theme_file_uri() ?>/dist/img/ilust.png" alt="">
+			<div class="col-md-12 text-center">
+				<span>Tickets</span>Tickets<span>Tickets</span>Tickets<span>Tickets</span><span>Tickets</span>Tickets<span></span>
 			</div>
 		</div>
-
-	</div>
-	
+		
 	

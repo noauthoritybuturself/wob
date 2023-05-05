@@ -13,9 +13,6 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3 col-sm-12">
-			<div id="footer-logo"> <a href="<?php echo get_home_url(); ?>"><img src="<?php echo get_theme_file_uri() ?>/dist/img/logo.png" alt="logo" /></a></div>
-			<div class="social-container">
-			</div>
 				
 			</div>
 			<div class="col-md-3 col-sm-12">
@@ -33,9 +30,6 @@
 	</div>
 	
 </footer>
-<div id="back-top">
-	<span class="icon"><i class="fa fa-arrow-up"></i></span>
-</div>
 <?php wp_footer(); ?>
 </body>
 
