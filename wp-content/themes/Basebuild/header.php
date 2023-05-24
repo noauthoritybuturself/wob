@@ -24,26 +24,24 @@
 <body <?php body_class(); ?>>
 
 
-  <header class="header">
-	</header>
-	<div class="container-fluid bg-orange text-white">
+  <div class="background bg-orange">
+	<div class="container text-white">
 		<div class="row">
-			<div class="col-md-6 text-center ">
-				<img class="img-fluid m-5" src="<?php echo get_theme_file_uri() ?>/dist/img/logo-header.png" alt="">
-				<a class="border border-white p-4 d-inline-block" href="">
-					<span class="text-uppercase font-spacing">Comprar Entradas</span>
-				</a>
+			<div class="col-md-6 text-center pt-5 pb-5">
+				<img class="img-fluid" src="<?php echo get_theme_file_uri() ?>/dist/img/logo-header.png" alt="">
+				<div>
+					<a class="border border-white w-100 mt-5 p-3 d-inline-block text-decoration-none button" href="">
+						<span class="text-uppercase text-white font-spacing fs-3 fw-bold">Comprar Entradas</span>
+					</a>
+				</div>
 			</div>
-			<div class="col-md-6 text-center">
-				<h2 class="font-weight-normal mt-5">"Frase sobre el evento"</h2>
-				<h2 class="font-weight-bold">Bitcoin Mag</h2>
+			<div class="col-md-6 text-center d-flex align-items-center">
+				<div class="mx-auto pb-5">
+					<h2 class="fw-normal pt-5">"Frase sobre el evento"</h2>
+					<h2 class="fw-bold">Bitcoin Mag</h2>
+				</div>
 			</div>
 		</div>
-		<div class="row background-image"></div>
-		<div class="row">
-			<div class="col-md-12 text-center">
-				<span>Tickets</span>Tickets<span>Tickets</span>Tickets<span>Tickets</span><span>Tickets</span>Tickets<span></span>
-			</div>
-		</div>
-		
+	</div>
+
 	
