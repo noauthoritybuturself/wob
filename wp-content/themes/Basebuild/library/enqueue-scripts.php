@@ -36,6 +36,9 @@ endif;
 if ( ! function_exists( 'foundationpress_scripts' ) ) :
 	function foundationpress_scripts() {
 		
+		// Bootstrap
+		wp_enqueue_style( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css', array(), '1.0.0', 'all' );
+
 		// Enque Web fonts
 		wp_enqueue_style( 'web-fonts', 'https://use.typekit.net/zip1fwz.css', array(), '1.0.0', 'all' );
 
@@ -48,14 +51,15 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		// Enque Font Awesome
 		wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', array(), '1.0.0', 'all' );
 
-		// Bootstrap
-		wp_enqueue_style( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css', array(), '1.0.0', 'all' );
 
 		// Enque swiffy style
 		wp_enqueue_style( 'swiffy', 'https://cdn.jsdelivr.net/npm/swiffy-slider@1.5.3/dist/css/swiffy-slider.min.css', array(), '1.5.3', 'all' );
 
 		// Deregister the jquery version bundled with WordPress.
 		wp_deregister_script( 'jquery' );
+
+		wp_enqueue_style('googlFonts', 'https://fonts.googleapis.com/css2?family=Inter&family=Slabo+13px&display=swap', array(), null);
+
 
 		// CDN hosted jQuery placed in the header, as some plugins require that jQuery is loaded in the header.
 		wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js', array(), '1.11.3', false );
