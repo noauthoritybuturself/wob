@@ -196,7 +196,10 @@ get_header(); ?>
 		<div class="container-lg">
 			<div class="row bg-white text-dark">
 				<div class="col-md-12 pt-5 pb-5">
-					<h1>Contacto</h1>
+					<div class="mb-5">
+						<div class="square"></div>
+						<h1>Contacto</h1>
+					</div>
 					<h5>Escribenos aqui y/o síguenos en redes</h5>
   					<textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
 					<a class="mt-3 ticket-button orange border-0">Enviar</a class="mt-3 ticket-button orange">
