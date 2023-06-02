@@ -12,6 +12,7 @@ if( function_exists('acf_add_options_page') ) {
 add_action( 'init', 'create_post_type' );
 
 function create_post_type() {
+	/** 
 	register_post_type( 'treestory',
 		array(
 			'labels' => array(
@@ -26,4 +27,5 @@ function create_post_type() {
 		// 	'menu_icon' => get_template_directory_uri() . '/assets/images/theme/admin-icons/icon-howtouse.svg'
 		)
 	);
+	*/
 }

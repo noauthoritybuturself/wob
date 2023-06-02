@@ -17,37 +17,31 @@ get_header(); ?>
 		
 <div class="container-fluid">
 	<div class="row">
-		<?php for($i = 1; $i <= 3; $i++){ ?>
+		<?php 
+		$rows = get_field('ticket');
+		if($rows){
+			foreach($rows as $row){ ?>
 				<div class="col-lg-4 col-md-6">
 					<div class="ticket">
-					<div class="stub">
-						<div class="top">
-						<span class="admit">Admit</span>		
+						<div class="check">
+							<div class="big">
+							<?php echo $row['title'] ?>
+							</div>
+							<div class="info">
+								<p><?php echo $row['text'] ?></p>
+							</div>
 						</div>
-						<div class="number"><?php echo $i ?></div>
-						<div class="invite">
-						Invite for you
+						<div class="stub">
+							<div class="ticket-buttons">
+								<a href="#" class="ticket-button white rounded">Pagar con BTC</a>
+								<a href="#" class="ticket-button orange rounded">Comprar</a>
+							</div>
 						</div>
-					</div>
-					<div class="check">
-						<div class="big">
-						You're <br> Invited
-						</div>
-						<div class="number">#<?php echo $i ?></div>
-						<div class="info">
-						<section>
-							<div class="title">Date</div>
-							<div>4/27/2016</div>
-						</section>
-						<div>
-							<a href="#" class="ticket-button white">Pagar com BTC</a>
-							<a href="#" class="ticket-button orange">Comprar</a>
-						</div>
-						</div>
-					</div>
 					</div>
 				</div>
-			<?php } ?>
+			<?php 
+		}
+				} ?>
 		</div>
 	</div>
 	<div class="background-image parallax border-bottom border-top border-white border-4 position-relative">
@@ -65,12 +59,21 @@ get_header(); ?>
 			<div class="col-md-12">
 				<ul id="ponentes">
 					<?php 
-					for($i = 1; $i<=7;$i++){?>
+					$args = array(
+						'post_type' => 'ponente',
+						'posts_per_page' => -1
+					);
+					$ponentes = get_posts($args);
+					if ($ponentes): 
+						foreach($ponentes as $ponente):  setup_postdata( $ponente );?>
 						<li class="shadow slide">
-						<img class="img-fluid" src="<?php echo get_theme_file_uri() ?>/dist/img/icon-naranja.png" alt="">
-						<h4>Nome <?php echo $i ?></h4>
+							<img class="img-fluid" src="<?php echo get_the_post_thumbnail_url($ponente->ID) ?>" alt="">
+							<h5><?php echo $ponente->post_title ?></h5>
 						</li>
-					<?php } ?>
+						<?php endforeach;
+						wp_reset_postdata();
+					endif;?>
+
 				</ul>
 
 			</div>
@@ -82,28 +85,18 @@ get_header(); ?>
 		</div>
 		<div class="row programa">
 			<h1 class="text-white">Programa</h1>
+			<?php $programa = get_field('programa'); 
+			$i = 1;
+			
+			?>
+			<?php foreach($programa as $dia){ ?>
 			<div class="col-md-4">
-				<div class="single">
-					<h3>Dia 1</h3>
-					<p>Entrada Normal</p>
+				<div class="single h-100">
+					<h3>Dia <?php echo $i; ?></h3>
+					<p><?php echo $dia ?> </p>
 				</div>
 			</div>
-			<div class="col-md-4">
-			<div class="single">
-
-				<h3>Dia 2</h3>
-				<p>Entrada Normal</p>
-
-			</div>
-			</div>
-			<div class="col-md-4">
-			<div class="single">
-
-				<h3>Dia 3</h3>
-				<p>Entrada Normal</p>
-
-			</div>
-			</div>
+			<?php $i++;} ?>
 		</div>
 		</div>
 		<img class="img-fluid overlap" src="<?php echo get_theme_file_uri() ?>/dist/img/ilust2.png" alt="" class="">

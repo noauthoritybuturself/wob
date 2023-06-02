@@ -32,15 +32,15 @@
 			<div class="col-md-6 text-center pt-5 pb-5">
 				<img class="img-fluid" src="<?php echo get_theme_file_uri() ?>/dist/img/logo-header.png" alt="">
 				<div>
-					<a class="border border-white w-100 mt-5 p-3 d-inline-block text-decoration-none button" href="">
+					<a class="border border-white w-100 mt-5 p-3 d-inline-block text-decoration-none button" href="<?php echo get_field('link_entradas') ?>">
 						<span class="text-uppercase text-white font-spacing fs-3 fw-bold">Comprar Entradas</span>
 					</a>
 				</div>
 			</div>
 			<div class="col-md-6 text-center d-flex align-items-center">
 				<div class="mx-auto pb-5">
-					<h2 class="fw-light pt-5">"Frase sobre el evento"</h2>
-					<h2 class="fw-bold">Bitcoin Mag</h2>
+					<h2 class="fw-light pt-5"><?php echo get_field('frase') ?></h2>
+					<h2 class="fw-bold"><?php echo get_field('author') ?></h2>
 				</div>
 			</div>
 		</div>
