@@ -1,6 +1,38 @@
-html{
-    color:white;
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100;200;300;400&display=swap');
+
+
+@font-face {
+  font-family: cocogoose;
+  src: url("../fonts/cocogoose-webfont.woff2");
+  font-style: normal;
+  font-display: swap;
 }
+
+@font-face {
+  font-family: cocogoose;
+  src: url("../fonts/cocogoose-light.ttf");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+
+
+
+body{
+  color:white;
+  font-family: 'Overpass', sans-serif !important;
+}
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+	font-family: cocogoose !important;
+}
+
 
 .font-spacing{
     letter-spacing:5px;
@@ -44,7 +76,7 @@ background-size: cover;
 .tickets {
   width: 100%;
   height: 80px;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300'><text x='0' y='40' fill='white' font-size='40'>Tickets</text></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300'><text x='0' y='40' fill='white' font-family='sans-serif' font-size='40'>Tickets</text></svg>");
   background-repeat: repeat;
   background-size: auto;
   animation: 15s linear infinite slide;
@@ -55,13 +87,13 @@ background-size: cover;
 }
 
 .background-image h1{
-  position: absolute;
-  bottom: 30px;
+  position: absolute !important;
+  bottom: 0px;
   color:white;
 }
 
 .increase-height{
-    height:150px;    <h5 class="mt-2 fw-light">advances one slide at a time</h5>
+    height:150px;
 
 }
 
@@ -285,7 +317,7 @@ div.sponsors .single h4{
     transform: rotate(0.7turn);
   }
 
-  .merch-title h1{
+  .container-lg h1{
     z-index:10;
     position: relative;
   }
@@ -296,4 +328,9 @@ div.sponsors .single h4{
 
   .stand .col-md-12{
     z-index:20;
+  }
+
+  .footer ul li a{
+    color:white;
+    text-decoration: none;
   }

@@ -17,7 +17,9 @@
   <meta charset="<?php bloginfo('charset'); ?>" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel='dns-prefetch' href='//polyfill.io' />
-  <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sarala:wght@400;700&display=swap" rel="stylesheet"> 
   <?php wp_head(); ?>
 </head>
 
@@ -37,7 +39,7 @@
 			</div>
 			<div class="col-md-6 text-center d-flex align-items-center">
 				<div class="mx-auto pb-5">
-					<h2 class="fw-normal pt-5">"Frase sobre el evento"</h2>
+					<h2 class="fw-light pt-5">"Frase sobre el evento"</h2>
 					<h2 class="fw-bold">Bitcoin Mag</h2>
 				</div>
 			</div>
