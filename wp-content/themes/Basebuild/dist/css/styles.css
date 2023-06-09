@@ -38,12 +38,13 @@ body h6 {
     letter-spacing:5px;
 }
 
-a.button:hover{
+.orange.button:hover{
   background-color: white;
 }
 
-a.button:hover span{
+.orange.button:hover span, .orange.button:hover{
   color:#ff9001 !important;
+  border:1px solid #ff9001
 }
 
 .bg-orange{
@@ -113,20 +114,57 @@ div.sponsors .single{
     color:black;
     background-color:#ff9001;
     text-align: center;
-    max-width: 300px;
+    width: 300px;
     padding:20px;
+    height: 300px;
+    position: relative;
 }
 
-div.sponsors .single h4{
+div.sponsors .single img{
+
+  max-height: 150px;
+  h4
+  h4
+  h4
+  h4
+  h4
+  h4
+}
+
+div.sponsors .single h5{
     margin-top:10px;
     padding:10px;
     background-color: white;
+    left: 0;
+    right: 0;
+    margin:0 auto;
+    position: absolute;
+    bottom:30px;
 }
 
 
 
 
+#tickets li{
+  width:600px;
+}
 
+@media (max-width: 768px) {
+
+  #tickets li{
+    width:500px;
+  }
+
+  
+}
+
+@media (max-width: 400px) {
+
+  #tickets li{
+    width:350px;
+  }
+
+}
 
 
 .ticket {
@@ -155,7 +193,7 @@ div.sponsors .single h4{
     top: 0;
     left: 0;
     border-top: 20px solid #ff9001;
-    border-right: 35px solid white;
+    border-right: 35px solid #fff0;
     width: 0;
   }
   .stub:after {
@@ -164,7 +202,7 @@ div.sponsors .single h4{
     bottom: 0;
     left: 0;
     border-bottom: 20px solid #ff9001;
-    border-right: 35px solid white;
+    border-right: 35px solid #fff0;
     width: 0;
   }
 
@@ -195,10 +233,10 @@ div.sponsors .single h4{
     width: 0;
   }
   .check .big {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 900;
     line-height: 0.8em;
-    width: 100%;
+    width: 110%;
 
   }
  
@@ -217,25 +255,25 @@ div.sponsors .single h4{
     right:10px;
   }
   
-  .ticket-button{
+  .my-button{
     margin-top:4px;
     padding: 8px;
     display: block;
     text-align: center;
     text-decoration: none;
-    font-size:16px;
-    padding-left: 20px;
-    padding-right: 20px;
+    font-size:15px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
-  .ticket-button.white{
+  .my-button.white{
     color:black;
     margin-top:0px;
     border: 1px solid grey;
 
   }
 
-  .ticket-button.orange{
+  .my-button.orange{
     background:#ff9001;
     color:white;
   }
@@ -245,8 +283,20 @@ div.sponsors .single h4{
     height:260px !important;
   }
 
+
+
   #ponentes li img {
+    width: 200px;
     height: 200px;
+
+  }
+
+  #ponentes li h5 {
+    width: 200px;
+
+    font-size: 15px;
+    padding-top:5px;
+    height:35px;
   }
 
   .overlap{
@@ -287,4 +337,13 @@ div.sponsors .single h4{
   .footer ul li a{
     color:white;
     text-decoration: none;
+  }
+
+  .button-width{
+    width:300px;
+  }
+
+  .button{
+    text-transform: uppercase;
+    font-weight: bold;
   }

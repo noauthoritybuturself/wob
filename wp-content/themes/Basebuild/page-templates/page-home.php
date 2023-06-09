@@ -17,11 +17,13 @@ get_header(); ?>
 		
 <div class="container-fluid">
 	<div class="row">
+		<ul id="tickets" class="cS-hidden">
 		<?php 
 		$rows = get_field('ticket');
 		if($rows){
 			foreach($rows as $row){ ?>
-				<div class="col-lg-4 col-md-6">
+				<li class="shadow slide">
+				<div class="">
 					<div class="ticket">
 						<div class="check">
 							<div class="big">
@@ -33,15 +35,17 @@ get_header(); ?>
 						</div>
 						<div class="stub">
 							<div class="ticket-buttons">
-								<a href="#" class="ticket-button white rounded">Pagar con BTC</a>
-								<a href="#" class="ticket-button orange rounded">Comprar</a>
+								<a href="#" class="my-button white rounded">Pagar con BTC</a>
+								<a href="#" class="my-button orange rounded">Comprar</a>
 							</div>
 						</div>
 					</div>
 				</div>
+				</li>
 			<?php 
 		}
 				} ?>
+			</ul>
 		</div>
 	</div>
 	<div class="background-image parallax border-bottom border-top border-white border-4 position-relative">
@@ -57,7 +61,7 @@ get_header(); ?>
 	<div class="container-lg">
 		<div class="row text-dark text-center">
 			<div class="col-md-12">
-				<ul id="ponentes">
+				<ul id="ponentes" class="cS-hidden">
 					<?php 
 					$args = array(
 						'post_type' => 'ponente',
@@ -67,7 +71,7 @@ get_header(); ?>
 					if ($ponentes): 
 						foreach($ponentes as $ponente):  setup_postdata( $ponente );?>
 						<li class="shadow slide">
-							<img class="img-fluid" src="<?php echo get_the_post_thumbnail_url($ponente->ID) ?>" alt="">
+							<img class="img-fluid img-thumbnail" src="<?php echo get_the_post_thumbnail_url($ponente->ID) ?>" alt="">
 							<h5><?php echo $ponente->post_title ?></h5>
 						</li>
 						<?php endforeach;
@@ -103,59 +107,110 @@ get_header(); ?>
 		<div class="bg-white border-bottom border-top border-white border-4">
 			<div class="container-lg pt-5 sponsors">
 			<h1 class="mb-5 text-secondary">Sponsors</h1>
-				<div class="row">
-					<?php for($i = 0; $i < 3; $i++){ ?>
-					<div class="col-md-4">
+				<ul id="sponsors">
+				<?php 
+					$args = array(
+						'post_type' => 'sponsor',
+						'posts_per_page' => -1
+					);
+					$sponsors = get_posts($args);
+					if ($sponsors): 
+						foreach($sponsors as $sponsor):  setup_postdata( $sponsor );?>
+					<li class="shadow slide">
 						<div class="single mb-4">
-							<img class="img-fluid" src="https://v2.clayui.com/images/thumbnail_placeholder.gif" alt="" class="img-fluid">
-							<h4>Tu</h4>
+							<img class="img-fluid img-thumbnail" src="<?php echo get_the_post_thumbnail_url($sponsor->ID) ?>" alt="" class="img-fluid">
+							<h5>
+								<a href="<?php echo get_field("url",$sponsor->ID) ?>" class="text-decoration-none text-dark" target="_blank">
+								<?php echo $sponsor->post_title ?>
+								</a>
+							</h5>
 						</div>
-					</div>
-					<?php } ?>
-					</div>
+					</li>
+					<?php endforeach;
+						wp_reset_postdata();
+					endif;?>
+
+					</ul>
 			</div>
 			<div class="container-lg pt-5 sponsors">
 			<h1 class="mb-5">Partners</h1>
-				<div class="row">
-					<?php for($i = 0; $i < 3; $i++){ ?>
-					<div class="col-md-4">
+			<ul id="partners">
+				<?php 
+					$args = array(
+						'post_type' => 'partners',
+						'posts_per_page' => -1
+					);
+					$sponsors = get_posts($args);
+					if ($sponsors): 
+						foreach($sponsors as $sponsor):  setup_postdata( $sponsor );?>
+					<li class="shadow slide">
 						<div class="single mb-4">
-							<img class="img-fluid" src="https://v2.clayui.com/images/thumbnail_placeholder.gif" alt="" class="img-fluid">
-							<h4>Tu</h4>
+							<img class="img-fluid img-thumbnail" src="<?php echo get_the_post_thumbnail_url($sponsor->ID) ?>" alt="" class="img-fluid">
+							<h5>
+								<a href="<?php echo get_field("url",$sponsor->ID) ?>" class="text-decoration-none text-dark" target="_blank">
+								<?php echo $sponsor->post_title ?>
+								</a>
+							</h5>
 						</div>
-					</div>
-					<?php } ?>
-					</div>
+					</li>
+					<?php endforeach;
+						wp_reset_postdata();
+					endif;?>
+
+					</ul>
 			</div>
 			<div class="container-lg pt-5 sponsors">
 			<h1 class="mb-5">Organizadores</h1>
-				<div class="row">
-					<?php for($i = 0; $i < 3; $i++){ ?>
-					<div class="col-md-4">
+			<ul id="organizadores">
+				<?php 
+					$args = array(
+						'post_type' => 'organizadores',
+						'posts_per_page' => -1
+					);
+					$organizadores = get_posts($args);
+					if ($organizadores): 
+						foreach($organizadores as $organizador):  setup_postdata( $organizador );?>
+					<li class="shadow slide">
 						<div class="single mb-4">
-							<img class="img-fluid" src="https://v2.clayui.com/images/thumbnail_placeholder.gif" alt="" class="img-fluid">
-							<h4>Tu</h4>
+							<img class="img-fluid img-thumbnail" src="<?php echo get_the_post_thumbnail_url($organizador->ID) ?>" alt="" class="img-fluid">
+							<h5>
+								<a href="<?php echo get_field("url",$organizador->ID) ?>" class="text-decoration-none text-dark" target="_blank">
+								<?php echo $organizador->post_title ?>
+								</a>
+							</h5>
 						</div>
-					</div>
-					<?php } ?>
-					</div>
+					</li>
+					<?php endforeach;
+						wp_reset_postdata();
+					endif;?>
+
+					</ul>
 			</div>
 		</div>
 		<div class="container-lg">
-			<div class="row sponsors">
-			<h1 class="text-white mt-5 mb-5">Cursos</h1>
-			<?php for($i = 1; $i <= 2; $i++){ ?>
-			<div class="col-md-6">
-					<div class="single mb-5">
-						<img src="https://v2.clayui.com/images/thumbnail_placeholder.gif" alt="" class="img-fluid">
-						<h4>Curso de Merch - Dia <?php echo $i ?></h4>
-					</div>
-			</div>
-			<div class="col-md-6">
-				<a class="button orange ticket-button border-0 mx-auto">Reservar</a>
-			</div>
-			<?php } ?>
+			<div class="row sponsors mt-5 mb-5">
+			<h1 class="text-white mb-5">Cursos</h1>
+			<ul id="cursos">
+				<?php 
+					$args = array(
+						'post_type' => 'cursos',
+						'posts_per_page' => -1
+					);
+					$cursos = get_posts($args);
+					if ($cursos): 
+						foreach($cursos as $curso):  setup_postdata( $curso );?>
+					<li class="slide">
+						<div class="single mb-4 border-white border border-3">
+							<img class="img-fluid img-thumbnail" src="<?php echo get_the_post_thumbnail_url($curso->ID) ?>" alt="" class="img-fluid">
+							<h5><?php echo $curso->post_title ?></h5>
+						</div>
+						<a href="<?php echo get_field("reservar",$curso->ID) ?>" target="_blank" class="text-decoration-none"><div class="my-button button orange">RESERVAR</div></a>
+					</li>
+					<?php endforeach;
+						wp_reset_postdata();
+					endif;?>
 
+					</ul>
 			</div>
 		</div>
 		<div class="bg-white border-bottom border-top border-white border-4">
@@ -167,7 +222,7 @@ get_header(); ?>
 					</div>
 					<div class="col-md-12">
 					<p>Del 30 de Septiembre al 2 de Octubre de 2023</p>
-					<a class="button ticket-button orange border-0 mt-5 mb-5">Consultar Tienda</a class="button">
+					<a href="<?php echo get_field("merch"); ?>" target="_blank" class="button button-width my-button orange mt-5 mb-5">Consultar Tienda</a class="button">
 					</div>
 				</div>
 		</div>
@@ -179,7 +234,7 @@ get_header(); ?>
             <h1 class="mb-5 mt-5">RESERVAR STAND</h1>
             <h5 class="mb-5">Del 30 de Septiembre al 2 de Octubre de 2023</h5>
 
-            <a class="ticket-button orange border-0">Reservar Stand</a>
+            <a href="<?php echo get_field("stand"); ?>" target="_blank" class="button button-width my-button orange border-0">Reservar Stand</a>
             </div>
         </div>
 		</div>  
@@ -195,7 +250,7 @@ get_header(); ?>
 					</div>
 					<h5>Escribenos aqui y/o síguenos en redes</h5>
   					<textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-					<a class="mt-3 ticket-button orange border-0">Enviar</a class="mt-3 ticket-button orange">
+					<a class="button mt-3 button-width my-button orange">Enviar</a>
 				</div>
 			</div>
 		</div>

@@ -32,8 +32,8 @@
 			<div class="col-md-6 text-center pt-5 pb-5">
 				<img class="img-fluid" src="<?php echo get_theme_file_uri() ?>/dist/img/logo-header.png" alt="">
 				<div>
-					<a class="border border-white w-100 mt-5 p-3 d-inline-block text-decoration-none button" href="<?php echo get_field('link_entradas') ?>">
-						<span class="text-uppercase text-white font-spacing fs-3 fw-bold">Comprar Entradas</span>
+					<a class="font-spacing my-button fs-3 border orange border-white w-100 mt-5 p-3 d-inline-block text-decoration-none button" href="<?php echo get_field('link_entradas') ?>">
+						Comprar Entradas
 					</a>
 				</div>
 			</div>
