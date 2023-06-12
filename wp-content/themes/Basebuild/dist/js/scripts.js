@@ -8,10 +8,11 @@ $(document).ready(function() {
         pauseOnHover:true,
         loop:true,
         controls:false,
+        pause:6000,
+        speed:6000,
         onSliderLoad: function() {
             $('#ponentes').removeClass('cS-hidden');
         },
-  
     });
 });
 
@@ -21,6 +22,8 @@ $(document).ready(function() {
         auto:true,
         pager:false,
         loop:true,
+        pause:6000,
+        speed:6000,
         item: 3,
         autoWidth: true,
         pauseOnHover:true,
