@@ -91,13 +91,14 @@ get_header(); ?>
 		<div class="row programa">
 			<h1 class="text-white">Programa</h1>
 			<?php $programa = get_field('programa'); 
-			$i = 1;
+			$dias = ['6 de Octubre','7 de Octubre','8 de Octubre'];
+			$i = 0;
 			
 			?>
 			<?php foreach($programa as $dia){ ?>
 			<div class="col-md-4">
 				<div class="single h-100">
-					<h3>Dia <?php echo $i; ?></h3>
+					<h3><?php echo $dias[$i]; ?></h3>
 					<p><?php echo $dia ?> </p>
 				</div>
 			</div>
@@ -140,8 +141,17 @@ get_header(); ?>
 
 			</ul>
 	</div>
+	<div class="background-image parallax border-bottom border-top border-white border-4 position-relative">
+		<div class="container-lg">
+			<div class="row border-top">
+				<div class="col-md-12">
+					<h1>Partners</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="container-lg pt-5 sponsors">
-		<h1 class="mb-5">Partners</h1>
 		<ul id="partners">
 			<?php 
 				$args = array(
@@ -166,8 +176,9 @@ get_header(); ?>
 			endif;?>
 		</ul>
 	</div>
-
-	<div class="container-lg text-white stand">
+	
+	<div class="background-image">
+	<div class="container-lg text-white">
 			<div class="row">
 				<div class="col-md-12">
 				<h1 class="mb-5 mt-5">¿Quieres ser Sponsor?</h1>
@@ -177,7 +188,7 @@ get_header(); ?>
 				</div>
 			</div>
 	</div>  
-	<img class="img-fluid overlap2" src="<?php echo get_theme_file_uri() ?>/dist/img/ilust3.png" alt="" class="">
+	</div>
 	<div class="background-image parallax border-bottom border-top border-white border-4 position-relative">
 		<div class="container-lg">
 			<div class="row border-top">
