@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100;200;300;400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100;200;300;400;700&display=swap');
 
 
 @font-face {
@@ -22,6 +23,9 @@
 body{
   color:white;
   font-family: 'Overpass', sans-serif !important;
+  box-sizing: border-box;
+  overflow-x: hidden;
+
 }
 
 body h1,
@@ -30,21 +34,25 @@ body h3,
 body h4,
 body h5,
 body h6 {
-	font-family: cocogoose !important;
+	font-family: 'Overpass', sans-serif !important;
 }
 
+h1 {
 
+  font-weight: 700;
+
+}
 .font-spacing{
     letter-spacing:5px;
 }
 
-.orange.button:hover{
-  background-color: white;
+.orange.button:hover, .wpuf_submit_222:hover{
+  background-color:#ff9001;
+  color: #fff;
 }
 
 .orange.button:hover span, .orange.button:hover{
-  color:#ff9001 !important;
-  border:1px solid #ff9001
+  color:#ffffff !important;
 }
 
 .bg-orange{
@@ -53,16 +61,101 @@ body h6 {
 }
 
 .background-image{
-    background-image: url('../img/ilust.png');
-    min-height: 400px;
+  background-image: url('../img/ilust6.png');
+  min-height: 400px;
+}
+
+.background-image--small{
+background-image: url('../img/ilust7.png');
+min-height: 200px;
+}
+
+.background-image--middle{
+background-image: url('../img/ilust8.png');
+min-height: 400px;
+}
+
+.background-image--middle2{
+  background-image: url('../img/ilust7.png');
+  min-height: 400px;
+  }
+
+
+.background-image--bottom{
+background-image: url('../img/ilust7.png');
+
+min-height: 400px;
 }
 
 .parallax{
-background-attachment: fixed;
-background-position: top;
-background-repeat: no-repeat;
-background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+}
 
+
+@media (hover: none) {
+
+  .parallax {
+    /* position: relative; */
+    background-attachment: scroll;
+    height: 100px  !important;
+  } 
+
+  .parallax img{
+    width: 100vw !important;
+    height: auto !important;
+  } 
+
+  .parallax--ponentes {
+
+    background-image: url('../img/ilust7.png');
+    min-height: 400px;
+
+  }
+
+  .parallax--ponentes {
+
+    background-image: url('../img/ilust7.png');
+    min-height: 400px;
+
+  }
+
+  .parallax--sponsors {
+
+    background-image: url('../img/ilust4.png');
+    min-height: 400px;
+
+  }
+
+  .parallax--partners {
+
+    background-image: url('../img/ilust4.png');
+    min-height: 100px;
+
+  }
+
+  .parallax--partners--question {
+
+    display:none;
+
+  }
+
+  .parallax--org {
+
+    background-image: url('../img/ilust6.png');
+    min-height: 400px;
+
+  }
+
+  .bg-orange {
+
+    background-color: transparent;
+
+  }
+
+  
 }
 
 @keyframes slide {
@@ -74,7 +167,9 @@ background-size: cover;
   }
 }
 
-
+.lSSlideWrapper {
+  padding: 0 !important;
+}
 /* header */
 
 .header__logo {
@@ -102,21 +197,16 @@ background-size: cover;
 .hotizontal-slider__container {
 
     margin: 0;
-    margin-bottom: 1em;
+    margin-bottom: 10px;
+    margin-top: 10px;
     padding: 0;
-    width: 100vw;
+    width: 100vw !important;
 
-    .lSSlideOuter{
-
-      margin: 0;
-      padding: 0;
-      width: 100vw;
-
-    }
+   
 
 }
 
-.hotizontal-slider__section {
+.hotizontal-slider__container .lSSlideOuter{
 
   margin: 0;
   padding: 0;
@@ -124,11 +214,27 @@ background-size: cover;
 
 }
 
+.hotizontal-slider__container--org {
+
+  margin: 0;
+  background-color: white;
+
+}
+
+.hotizontal-slider__section {
+
+  margin: 0;
+  padding: 0;
+  width: 100vw !important;
+
+}
+
 .caption{
   fill:white;
 }
 
-.background-image h1{
+
+.parallax h1{
   position: absolute !important;
   bottom: 0px;
   color:white;
@@ -139,25 +245,42 @@ background-size: cover;
 
 }
 
-div.programa .col-md-4 .single{
+#programa{
+  height: auto !important;
+}
+
+div.programa .slide{
     background-color: white;
     padding:20px;
     padding-top:50px;    
-    height:500px;
+    border-radius: 4px;
     color:black;
 }
+
 
 div.sponsors h1{
     color: black;
 }
 
-div.sponsors .single{
+div.sponsors {
+
+  height: auto;
+
+}
+
+div.sponsors ul {
+
+  height: auto;
+
+}
+
+div.sponsors li{
     color:black;
     background-color:#ffffff;
     text-align: center;
-    min-width: 200px; 
+    width: 200px; 
     padding:20px;
-    height: 300px;
+    height: 250px;
     position: relative;
     border-radius: 4px;
 }
@@ -165,12 +288,7 @@ div.sponsors .single{
 div.sponsors .single img{
 
   max-height: 150px;
-  h4
-  h4
-  h4
-  h4
-  h4
-  h4
+
 }
 
 div.sponsors .single h5{
@@ -191,26 +309,6 @@ div.sponsors .single h5{
   width: auto;
 }
 
-@media (max-width: 768px) {
-
-  #tickets li{
-    width:500px;
-  }
-
-  #tickets ul{
-    height: auto;
-  }
-}
-
-@media (max-width: 400px) {
-
-  #tickets li{
-    width:350px;
-  }
-
-}
-
-
 .ticket {
     display: flex;
     justify-content: center;
@@ -223,60 +321,26 @@ div.sponsors .single h5{
   }
   .stub {
     background: #fff;
-    height: 200px;
-    width: 200px;
+    height: 250px;
+    width: 190px;
     padding: 10px;
     position: relative;
     color: black;
     border-radius: 4px;
     display: flex;
   }
-  .stub:before {
-    /* content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-top: 20px solid #ff9001;
-    border-right: 35px solid #fff0;
-    width: 0; */
-  }
-  .stub:after {
-    /* content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    border-bottom: 20px solid #ff9001;
-    border-right: 35px solid #fff0;
-    width: 0; */
-  }
 
   .check {
     background: #fff;
-    height: 200px;
-    width: 500px;
+    height: 250px;
+    width: 300px;
     padding: 30px;
     position: relative;
     color: black;
     border-radius: 4px;
+    border-right: 2px dashed #ff9001 ;
   }
-  .check:before {
-    /* content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    border-top: 20px solid #ff9001;
-    border-left: 35px solid white;
-    width: 0; */
-  }
-  .check:after {
-    /* content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    border-bottom: 20px solid #ff9001;
-    border-left: 35px solid white;
-    width: 0; */
-  }
+
   .check .big {
     font-size: 30px;
     font-weight: 900;
@@ -296,24 +360,40 @@ div.sponsors .single h5{
     padding-right: 10PX;
   }
 
+  .price {
+
+
+
+  }
 
   .ticket-buttons{
     bottom:10px;
     right:10px;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: auto;
+    
   }
   
-  .my-button{
+  .my-button, .wpuf_submit_222 {
     margin-top:4px;
     padding: 8px;
     display: block;
     border-radius: 4px;
+    border: 4px dashed #fff;
     text-align: center;
     text-decoration: none;
-    font-size: 0.2em;
+    font-size: 1.5em;
     padding-left: 10px;
     padding-right: 10px;
+    color: #fff;
+  }
+
+  .my-button:hover {
+    background-color: #fff;
+    color: #ff9001;
   }
 
   .my-button__pay {
@@ -334,38 +414,43 @@ div.sponsors .single h5{
   .my-button__pay.white{
     color:black;
     margin-top:0px;
-    border: 1px solid grey;
+    border: 2px solid grey;
+
+  }
+
+  .my-button__pay.white:hover{
+    color:rgb(255, 255, 255);
+    background-color: grey;
 
   }
 
   .my-button__pay.orange{
-    background:#ff9001;
-    color:white;
+    background:#ffffff;
+    color:#ff9001;
+    border: 2px dashed #ff9001;
   }
 
+  .my-button__pay.orange:hover{
+    background:#ff9001;
+    color:#fff;
+  }
 
-  #ponentes{
-    /* height:260px !important; */
+  .my-button.orange, .wpuf_submit_222{
+    background:#ffffff;
+    color:#ff9001;
+    border: 4px dashed #ff9001;
+  }
+
+  .ponentes__section ul {
+
+    height: 200px;
+
   }
 
   .wob-thumbnail {
 
     border: none;
 
-  }
-
-  #ponentes li img {
-    /* width: 200px;
-    height: 200px; */
-
-  }
-
-  #ponentes li h5 {
-    /* width: 200px; */
-
-    font-size: 15px;
-    /* padding-top:5px; */
-    /* height:35px; */
   }
 
   .overlap{
@@ -377,6 +462,12 @@ div.sponsors .single h5{
     bottom: 400px;
     position:relative;
     margin-bottom: -400px;
+  }
+
+  .merch__text {
+
+    color: black;
+
   }
 
   .square{
@@ -393,14 +484,37 @@ div.sponsors .single h5{
   .container-lg h1{
     z-index:10;
     position: relative;
+    background-color: transparent;
+    padding: 10px;
+    margin: 0;
+    border: 4px dashed white;
+    border-bottom: none;
   }
 
   .stand{
-    margin-top:300px;
+    /* margin-top:300px; */
+    z-index:2;
+    position: relative;
+    left: 2em;
   }
 
   .stand .col-md-12{
     z-index:20;
+  }
+
+  .footer {
+ 
+    
+    padding-top: 6em;
+    position: relative;
+    z-index: 1;
+    min-height: 500px;
+    overflow: hidden;
+  }
+  
+  .footer img{
+    z-index: 0;
+    bottom: 0;
   }
 
   .footer ul li a{
@@ -408,11 +522,109 @@ div.sponsors .single h5{
     text-decoration: none;
   }
 
-  .button-width{
+  .footer a {
+
+    color:white;
+    text-decoration: none;
+
+  }
+
+  .footer a:hover{
+    background:#ff9001;
+    color:#fff;
+    text-decoration: dotted;
+  }
+
+  .button-width, .wpuf_submit_222{
     width:300px;
   }
 
   .button{
+    /* text-transform: capitalize; */
+    font-weight: bold;
+  }
+  
+  .button::first-letter {
     text-transform: uppercase;
     font-weight: bold;
   }
+
+  .firma {
+
+    z-index: 3;
+    position: relative;
+    bottom: 0;
+    right: 1em;
+    font-size: 0.8em;
+    padding: 1em;
+
+  }
+
+  @media (max-device-width: 1024px) {
+
+}
+
+
+  @media (max-width: 768px) {
+
+    .ticket {
+
+      flex-direction: column;
+      max-width: 600px;
+
+    }
+
+    .programa__card{
+
+      margin-top: 10px;
+
+    }
+
+    .check {
+
+      width: 300px;
+      max-width: 500px;
+      border-bottom: 2px dashed #ff9001 ;
+      border-right: none;
+
+    }
+
+    .stub{
+
+      width: 100%;
+      height: auto;
+
+    }
+
+    .tickets__section li{
+      width:500px;
+      max-width: 600px;
+
+    }
+  
+    .tickets__section ul{
+
+      height: auto !important;
+
+    }
+    
+    .footer__logo {
+
+      height: 30px;
+      width: auto;
+
+    }
+
+  }
+  
+  @media (max-width: 400px) {
+  
+    #tickets li{
+      
+    }
+  
+  }
+
+#organizadores{
+  margin: 0 auto;
+}
