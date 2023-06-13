@@ -32,15 +32,15 @@
 			<div class="col-md-6 text-center pt-5 pb-5 header__logo">
 				<img class="img-fluid  header__logo--img" src="<?php echo get_theme_file_uri() ?>/dist/img/logo-header.png" alt="">
 				<div>
-					<a class="font-spacing my-button fs-6 border orange border-white w-100 mr-5 mt-3 p-3 d-inline-block text-decoration-none button" href="<?php echo get_field('link_entradas') ?>">
+					<a class="my-button" href="#tickets-wrap" id="scrollToTickets">
 						Comprar Entradas
 					</a>
 				</div>
 			</div>
 			<div class="col-md-6 text-center d-flex align-items-center">
 				<div class="mx-auto pb-5">
-					<h2 class="fw-light fs-5 pt-5"><?php echo get_field('frase') ?></h2>
-					<h2 class="fw-bold fs-4"><?php echo get_field('author') ?></h2>
+					<h2 class="fw-light fs-5 pt-5 header__quote"><?php echo get_field('frase') ?></h2>
+					<h2 class="mt-3 fw-light fs-6 header__author"><?php echo get_field('author') ?></h2>
 				</div>
 			</div>
 		</div>
