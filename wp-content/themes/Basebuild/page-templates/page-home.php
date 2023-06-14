@@ -15,16 +15,13 @@ get_header(); ?>
 		</div>
 	</div>
 </div>
-		
 <div class="container-fluid hotizontal-slider__section tickets__section">
-	<div class="row hotizontal-slider__container ">
-		<ul id="tickets" >
+		<div class="wrapper">
 		<?php 
 		$rows = get_field('ticket');
 		if($rows){
 			foreach($rows as $row){ ?>
-				<li class="shadow slide">
-				<div class="">
+				<div class="shadow slide box">
 					<div class="ticket">
 						<div class="check">
 							<div class="big">
@@ -36,20 +33,20 @@ get_header(); ?>
 						</div>
 						<div class="stub">
 							<div class="ticket-buttons">
-								<h1 class="price">100eur</h1>
+								<h1 class="price"><?php echo $row['price'] ?>€</h1>
 								<a href="#" class="my-button__pay white rounded">Pagar con BTC</a>
 								<a href="https://app.tickettailor.com/events/wobitcoin/930659" class="my-button__pay orange rounded">Pagar con Fiat</a>
 							</div>
 						</div>
 					</div>
-				</div>
-				</li>
+			</div>
 			<?php 
 		}
 				} ?>
-			</ul>
+			</div>
+			<div class="arrows"></div>
+
 		</div>
-	</div>
 	<div class="background-image parallax--ponentes parallax border-bottom border-top border-white border-4 position-relative">
 		<div class="container-lg">
 			<div class="row border-top">
@@ -61,7 +58,7 @@ get_header(); ?>
 	</div>
 	<div class="container-fluid hotizontal-slider__section sponsors ponentes__section">
 		<div class="hotizontal-slider__container">
-			<ul id="ponentes" >
+			<div id="ponentes" class="wrapper2" >
 				<?php 
 				$args = array(
 					'post_type' => 'ponente',
@@ -70,7 +67,7 @@ get_header(); ?>
 				$ponentes = get_posts($args);
 				if ($ponentes): 
 					foreach($ponentes as $ponente):  setup_postdata( $ponente );?>
-					<li class="slide">
+					<div class="slide box2">
 						<div class="single mb-4">
 							<img class="img-fluid img-thumbnail wob-thumbnail" src="<?php echo get_the_post_thumbnail_url($ponente->ID) ?>" alt="" >
 							<h5>
@@ -79,15 +76,15 @@ get_header(); ?>
 								</a>
 							</h5>
 						</div>
-					</li>
+				</div>
 					<?php endforeach;
 					wp_reset_postdata();
 				endif;?>
 
-			</ul>
+			</div>
 		</div>
 		<div class="hotizontal-slider__container">
-			<ul id="ponentes2">
+			<div id="" class="wrapper3">
 				<?php 
 				$args = array(
 					'post_type' => 'ponente',
@@ -96,7 +93,7 @@ get_header(); ?>
 				$ponentes = get_posts($args);
 				if ($ponentes): 
 					foreach($ponentes as $ponente):  setup_postdata( $ponente );?>
-					<li class="slide">
+					<div class="slide box3">
 						<div class="single mb-4">
 							<img class="img-fluid img-thumbnail wob-thumbnail" src="<?php echo get_the_post_thumbnail_url($ponente->ID) ?>" alt="" >
 							<h5>
@@ -105,12 +102,12 @@ get_header(); ?>
 								</a>
 							</h5>
 						</div>
-					</li>
+				</div>
 					<?php endforeach;
 					wp_reset_postdata();
 				endif;?>
 
-			</ul>
+			</div>
 		</div>
 	</div>
 	<div class="background-image--middle parallax border-bottom border-top border-white border-4 position-relative">
@@ -235,7 +232,7 @@ get_header(); ?>
 	<div class="container text-white">
 		<div class="row">
 			<div class="col-md-6 text-center py-5 header__logo">
-					<h5 class="my-auto">Partcipa en Wob y se una referencia de Bitcoin en España</h5>
+					<h5 class="my-auto">Partcipa en Wob a extender el debate sobre Bitcoin en España</h5>
 			</div>
 			<div class="col-md-6 text-center d-flex align-items-center">
 				<div class="mx-auto my-auto py-5">

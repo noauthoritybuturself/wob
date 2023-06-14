@@ -52,6 +52,10 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', array(), '1.0.0', 'all' );
 
 
+		wp_enqueue_style( 'slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', array(), '1.0.0', 'all' );
+
+
+
 		// Enque swiffy style
 		wp_enqueue_style( 'swiffy', 'https://cdn.jsdelivr.net/npm/swiffy-slider@1.5.3/dist/css/swiffy-slider.min.css', array(), '1.5.3', 'all' );
 
@@ -66,6 +70,12 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 
 		// Enqueue scripts for animations
 		wp_enqueue_script( 'sal', get_stylesheet_directory_uri() . '/dist/js/sal.js', array(), '1.0', true );
+
+					// Enqueue scripts
+		wp_enqueue_script( 'gsap', 'https://assets.codepen.io/16327/gsap-latest-beta.min.js?r=3.11.5', array(), '1.0', true );
+
+		wp_enqueue_script( 'slick', 'https://unpkg.com/gsap@3/dist/Draggable.min.js', array(), '1.0', true );
+
 
 		// Enqueue scripts
 		wp_enqueue_script( 'lightslider', get_stylesheet_directory_uri() . '/dist/js/lightslider.js', array(), '1.0', true );
