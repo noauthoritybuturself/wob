@@ -35,7 +35,7 @@ $(document).ready(function() {
                     speed:1000,
                     enableTouch:true,
                     enableDrag:true,            
-                    loop:true 
+                    loop:true
                   }
             }
         ]
