@@ -21,7 +21,7 @@ get_header(); ?>
 		$rows = get_field('ticket');
 		if($rows){
 			foreach($rows as $row){ ?>
-				<div class="shadow slide box">
+				<div class="slide box">
 					<div class="ticket">
 						<div class="check">
 							<div class="big">
@@ -34,7 +34,7 @@ get_header(); ?>
 						<div class="stub">
 							<div class="ticket-buttons">
 								<h1 class="price"><?php echo $row['price'] ?>€</h1>
-								<a href="#" class="my-button__pay white rounded">Pagar con BTC</a>
+								<a href="https://pagosinreglas.ddns.net/plugins/lnbank/lnurl/4165ff8c-2fc8-4e0f-ae43-b7d3d3852322" class="my-button__pay white rounded">Pagar con BTC</a>
 								<a href="https://app.tickettailor.com/events/wobitcoin/930659" class="my-button__pay orange rounded">Pagar con Fiat</a>
 							</div>
 						</div>
@@ -58,7 +58,7 @@ get_header(); ?>
 	</div>
 	<div class="container-fluid hotizontal-slider__section sponsors ponentes__section">
 		<div class="hotizontal-slider__container">
-			<div id="ponentes" class="wrapper2" >
+			<div id="ponentes" class="wrapper2 " >
 				<?php 
 				$args = array(
 					'post_type' => 'ponente',
@@ -190,7 +190,7 @@ get_header(); ?>
 		</div>
 	</div>
 
-	<div class="container-lg sponsors hotizontal-slider__section hotizontal-slider__container">
+	<div class="container-lg sponsors hotizontal-slider__section hotizontal-slider__container ponentes__section">
 		<div class="hotizontal-slider__container">
 			<ul id="partners">
 				<?php 
@@ -232,7 +232,7 @@ get_header(); ?>
 	<div class="container text-white">
 		<div class="row">
 			<div class="col-md-6 text-center py-5 header__logo">
-					<h5 class="my-auto">Partcipa en Wob a extender el debate sobre Bitcoin en España</h5>
+					<h5 class="my-auto">Participa en WOB y ayuda a extender el debate sobre Bitcoin en España</h5>
 			</div>
 			<div class="col-md-6 text-center d-flex align-items-center">
 				<div class="mx-auto my-auto py-5">

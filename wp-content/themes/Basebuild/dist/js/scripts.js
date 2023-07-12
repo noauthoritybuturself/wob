@@ -141,7 +141,7 @@ const boxes = gsap.utils.toArray(".box");
 
 const loop = horizontalLoop(boxes, {
   repeat: -1,
-  speed:0.5,
+  speed:0.3,
   draggable: true, // make it draggable
   center: true // active element is the one in the center of the container rather than th left edge
 });
@@ -152,6 +152,7 @@ const boxes2 = gsap.utils.toArray(".box2");
 const loop2 = horizontalLoop(boxes2, {
   repeat: -1,
   speed: 0.3,
+  spaceBefore:50,
   draggable: true, // make it draggable
   center: true // active element is the one in the center of the container rather than th left edge
 });

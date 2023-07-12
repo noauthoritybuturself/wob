@@ -298,6 +298,14 @@ div.sponsors .slide{
     border-radius: 4px;
 }
 
+#sponsors .slide{
+  width: 250px;
+}
+
+div.sponsors .slide h5{
+    bottom:10px;
+}
+
 div.sponsors .single img{
 
   max-height: 150px;
@@ -311,7 +319,7 @@ div.ponentes .single img{
 
 }
 
-div.sponsors .single h5{
+.single h5{
     margin-top:10px;
     padding:10px;
     background-color: white;
@@ -719,11 +727,19 @@ div.sponsors .single h5{
   .box, .box2,.box3 {
     box-sizing: border-box;
     display: flex;
-    margin: 5px;
+    margin: 8px;
     position: relative;
     flex-shrink: 0;
     cursor: pointer;
   }
+
+  .ponentes__section .slide:first-child{
+    margin-left:16px;
+  }
+
+  .box:last-child,  .box2:last-child,  .box3:last-child{
+
+}
  
   
   .prev {
