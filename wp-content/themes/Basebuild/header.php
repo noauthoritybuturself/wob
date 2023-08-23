@@ -39,7 +39,7 @@
 			</div>
 			<div class="col-md-6 text-center d-flex align-items-center">
 				<div class="mx-auto pb-5">
-					<h2 class="fw-light fs-5 pt-5 header__quote"><?php echo get_field('frase') ?></h2>
+					<h1 class="fw-light fs-5 pt-5 header__quote"><?php echo get_field('frase') ?></h1>
 					<h2 class="mt-3 fw-light fs-6 header__author"><?php echo get_field('author') ?></h2>
 				</div>
 			</div>

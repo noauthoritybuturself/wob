@@ -33,9 +33,9 @@ get_header(); ?>
 						</div>
 						<div class="stub">
 							<div class="ticket-buttons">
-								<h1 class="price"><?php echo $row['price'] ?>€</h1>
-								<a href="https://pagosinreglas.ddns.net/plugins/lnbank/lnurl/4165ff8c-2fc8-4e0f-ae43-b7d3d3852322" class="my-button__pay white rounded">Pagar con BTC</a>
-								<a href="https://app.tickettailor.com/events/wobitcoin/930659" class="my-button__pay orange rounded">Pagar con Fiat</a>
+								<h2 class="price"><?php echo $row['price'] ?>€</h2>
+								<a href="https://pagosinreglas.ddns.net/plugins/4cT5VGjiFJjPuFnRNLDdnBG1PPUPJ77CTJzXDkzF53cK/TicketTailor" class="my-button__pay white rounded">Pagar con BTC</a>
+								<a href="https://buytickets.at/wobitcoin/930659" class="my-button__pay orange rounded">Pagar con fiat</a> 
 							</div>
 						</div>
 					</div>
@@ -51,7 +51,7 @@ get_header(); ?>
 		<div class="container-lg">
 			<div class="row border-top">
 				<div class="col-md-12">
-					<h1>Ponentes</h1>
+					<h2>Ponentes</h2>
 				</div>
 			</div>
 		</div>
@@ -69,12 +69,14 @@ get_header(); ?>
 					foreach($ponentes as $ponente):  setup_postdata( $ponente );?>
 					<div class="slide box2">
 						<div class="single mb-4">
-							<img class="img-fluid img-thumbnail wob-thumbnail" src="<?php echo get_the_post_thumbnail_url($ponente->ID) ?>" alt="" >
-							<h5>
-								<a href="<?php echo get_field("url",$ponente->ID) ?>" class="text-decoration-none text-dark" target="_blank">
-									<?php echo $ponente->post_title ?>
-								</a>
-							</h5>
+							<a href="<?php echo get_field("url",$ponente->ID) ?>" class="text-decoration-none text-dark" target="_blank">
+								<img class="img-fluid img-thumbnail wob-thumbnail" src="<?php echo get_the_post_thumbnail_url($ponente->ID) ?>" alt="" >
+								<div class="wob-thumbnail__name">
+									<h5>
+											<?php echo $ponente->post_title ?>
+									</h5>
+								</div>
+							</a>
 						</div>
 				</div>
 					<?php endforeach;
@@ -88,6 +90,7 @@ get_header(); ?>
 				<?php 
 				$args = array(
 					'post_type' => 'ponente',
+					'post_status' => 'publish',
 					'posts_per_page' => -1
 				);
 				$ponentes = get_posts($args);
@@ -95,12 +98,13 @@ get_header(); ?>
 					foreach($ponentes as $ponente):  setup_postdata( $ponente );?>
 					<div class="slide box3">
 						<div class="single mb-4">
-							<img class="img-fluid img-thumbnail wob-thumbnail" src="<?php echo get_the_post_thumbnail_url($ponente->ID) ?>" alt="" >
-							<h5>
-								<a href="<?php echo get_field("url",$ponente->ID) ?>" class="text-decoration-none text-dark" target="_blank">
-									<?php echo $ponente->post_title ?>
-								</a>
-							</h5>
+							<a href="<?php echo get_field("url",$ponente->ID) ?>" class="text-decoration-none text-dark" target="_blank">
+
+								<img class="img-fluid img-thumbnail wob-thumbnail" src="<?php echo get_the_post_thumbnail_url($ponente->ID) ?>" alt="" >
+								<h5>
+										<?php echo $ponente->post_title ?>
+								</h5>
+							</a>
 						</div>
 				</div>
 					<?php endforeach;
@@ -114,32 +118,32 @@ get_header(); ?>
 		<div class="container-lg">
 			<div class="row border-top">
 				<div class="col-md-12">
-					<h1>Programa</h1>
+					<h2>Programa</h2>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="container-lg mt-5">
-	<div class="row programa">
-		<ul id="programa">
-			<?php $programa = get_field('programa'); 
-				$dias = ['6 de Octubre','7 de Octubre','8 de Octubre'];
-				$i = 0;
-				
-				?>
-				<?php foreach($programa as $dia){ ?>
-				<li class="slide">
-				<div class="">
-					<div class="single h-100">
-						<h3><?php echo $dias[$i]; ?></h3>
-						<p><?php echo $dia ?> </p>
-	
-				</div>
-				</div>
+		<div class="row programa">
+			<ul id="programa">
+				<?php $programa = get_field('programa'); 
+					$dias = ['6 de Octubre','7 de Octubre','8 de Octubre'];
+					$i = 0;
+					
+					?>
+					<?php foreach($programa as $dia){ ?>
+					<li class="slide">
+					<div class="">
+						<div class="single h-100">
+							<h3><?php echo $dias[$i]; ?></h3>
+							<p><?php echo $dia ?> </p>
+		
+					</div>
+					</div>
 
-				</li>
-			<?php $i++;} ?>
-		</ul>
+					</li>
+				<?php $i++;} ?>
+			</ul>
 		</div>
 	</div>
 	<img class="img-fluid overlap" src="<?php echo get_theme_file_uri() ?>/dist/img/ilust2.png" alt="" class="">
@@ -147,44 +151,47 @@ get_header(); ?>
 		<div class="container-lg">
 			<div class="row border-top">
 				<div class="col-md-12">
-					<h1>Sponsors</h1>
+					<h2>Sponsors</h2>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="container-fluid hotizontal-slider__section sponsors ponentes__section">
 		<div class="hotizontal-slider__container">
-		<ul id="sponsors">
-			<?php 
-				$args = array(
-					'post_type' => 'sponsor',
-					'posts_per_page' => -1
-				);
-				$sponsors = get_posts($args);
-				if ($sponsors): 
-					foreach($sponsors as $sponsor):  setup_postdata( $sponsor );?>
-				<li class="slide">
-					<div class="single mb-4">
-						<img class="img-fluid img-thumbnail wob-thumbnail" src="<?php echo get_the_post_thumbnail_url($sponsor->ID) ?>" alt="" class="img-fluid">
-						<h5>
-							<a href="<?php echo get_field("url",$sponsor->ID) ?>" class="text-decoration-none text-dark" target="_blank">
-							<?php echo $sponsor->post_title ?>
-							</a>
-						</h5>
-					</div>
-				</li>
-				<?php endforeach;
-					wp_reset_postdata();
-				endif;?>
+			<div id="sponsors" class="wrapper5">
+				<?php 	
+					$args = array(
+						'post_type' => 'sponsor',
+						'posts_per_page' => -1
+					);
 
-			</ul>
+					$sponsors = get_posts($args);
+					if ($sponsors): 
+						foreach($sponsors as $sponsor):  setup_postdata( $sponsor );?>
+							<div class="slide box5">
+								<div class="single mb-4">
+									<a href="<?php echo get_field("url",$sponsor->ID) ?>" class="text-decoration-none text-dark" target="_blank">
+
+										<img class="img-fluid img-thumbnail wob-thumbnail" src="<?php echo get_the_post_thumbnail_url($sponsor->ID) ?>" alt="" >
+										<h5>
+												<?php echo $sponsor->post_title ?>
+										</h5>
+									</a>
+								</div>
+							</div>
+						<?php endforeach;
+						wp_reset_postdata();
+					endif;?>
+
+			</div>
 		</div>
+		
 	</div>
 	<div class="background-image--small parallax--partners parallax border-bottom border-top border-white border-4 position-relative">
 		<div class="container-lg">
 			<div class="row border-top">
 				<div class="col-md-12">
-					<h1>Partners</h1>
+					<h2>Partners</h2>
 				</div>
 			</div>
 		</div>
@@ -192,16 +199,16 @@ get_header(); ?>
 
 	<div class="container-lg sponsors hotizontal-slider__section hotizontal-slider__container ponentes__section">
 		<div class="hotizontal-slider__container">
-			<ul id="partners">
+			<div id="partners" class="wrapper6">
 				<?php 
 					$args = array(
 						'post_type' => 'partners',
 						'posts_per_page' => -1
 					);
 					$sponsors = get_posts($args);
-					if ($sponsors): 
+					if ($sponsors): 	
 						foreach($sponsors as $sponsor):  setup_postdata( $sponsor );?>
-					<li class="slide">
+					<div class="slide box6">
 						<div class="single mb-4">
 							<img class="img-fluid img-thumbnail wob-thumbnail" src="<?php echo get_the_post_thumbnail_url($sponsor->ID) ?>" alt="" class="img-fluid">
 							<h5>
@@ -210,11 +217,11 @@ get_header(); ?>
 								</a>
 							</h5>
 						</div>
-					</li>
+					</div>
 				<?php endforeach;
 					wp_reset_postdata();
 				endif;?>
-			</ul>
+			</div>
 		</div>
 	</div>
 	
@@ -222,7 +229,7 @@ get_header(); ?>
 		<div class="container-lg">
 			<div class="row border-top">
 				<div class="col-md-12">
-					<h1>¿Quieres ser Sponsor?</h1>
+					<h2>¿Quieres ser Sponsor?</h2>
 					
 				</div>
 			</div>
@@ -246,7 +253,7 @@ get_header(); ?>
 		<div class="container-lg">
 			<div class="row border-top">
 				<div class="col-md-12">
-					<h1>Tienda y merch</h1>
+					<h2>Tienda y merch</h2>
 				</div>
 			</div>
 		</div>
@@ -271,14 +278,14 @@ get_header(); ?>
 		<div class="container-lg">
 			<div class="row border-top">
 				<div class="col-md-12">
-					<h1>Organizadores</h1>
+					<h2>Organizadores</h2>
 				</div>
 			</div>
 		</div>
 	</div>		
 	<div class="container-fluid sponsors hotizontal-slider__section">
 		<div class="hotizontal-slider__container hotizontal-slider__container--org">
-			<ul id="organizadores">
+			<ul id="organizadores" class="wrapper4">
 				<?php 
 					$args = array(
 						'post_type' => 'organizadores',
@@ -287,7 +294,7 @@ get_header(); ?>
 					$organizadores = get_posts($args);
 					if ($organizadores): 
 						foreach($organizadores as $organizador):  setup_postdata( $organizador );?>
-					<li class="slide">
+					<div class="slide box4">
 						<div class="single mb-4">
 							<img class="img-fluid img-thumbnail wob-thumbnail" src="<?php echo get_the_post_thumbnail_url($organizador->ID) ?>" alt="" class="img-fluid">
 							<h5>
@@ -296,7 +303,7 @@ get_header(); ?>
 								</a>
 							</h5>
 						</div>
-					</li>
+					</div>
 					<?php endforeach;
 						wp_reset_postdata();
 					endif;?>
@@ -312,7 +319,7 @@ get_header(); ?>
 				<div class="col-md-12 pt-5 pb-5">
 					<div class="mb-5">
 						<div class="square"></div>
-						<h1>Contacto</h1>
+						<h2>Contacto</h2>
 					</div>
 					<h5>Escribenos aqui y/o síguenos en redes</h5>
 					<?php  echo do_shortcode("[weforms id=222]")?>

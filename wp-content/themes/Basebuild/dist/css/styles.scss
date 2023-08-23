@@ -1,0 +1,16 @@
+@use "../../cirrus-ui/src/cirrus-ext" as * with (
+    $config: (
+        excludes: (
+            ABSOLUTES,
+        ),
+        opacity: null, // Disable default opacity classes
+        extend: (
+            // Add your own
+            opacity: (
+                25: .25,
+                50: .5,
+                75: .75,
+            )
+        )
+    ),
+);

@@ -43,97 +43,79 @@ $(document).ready(function() {
 });
 
 
-$(document).ready(function() {
-    var autoplaySlider = $('#sponsors').lightSlider({
-        auto:true,
-        pager:false,
-        autoWidth:true,
-        pauseOnHover:true,
-        loop:true,
-        controls:false,
-        slideMargin: 30,
-        onSliderLoad: function() {
-            $('#sponsors').removeClass('cS-hidden');
-        },
-        onBeforeSlide: function (el) {
-        } 
-    });
-});
+// $(document).ready(function() {
+//     var autoplaySlider = $('#sponsors').lightSlider({
+//         auto:true,
+//         pager:false,
+//         autoWidth:true,
+//         pauseOnHover:true,
+//         loop:true,
+//         controls:false,
+//         slideMargin: 30,
+//         onSliderLoad: function() {
+//             $('#sponsors').removeClass('cS-hidden');
+//         },
+//         onBeforeSlide: function (el) {
+//         } 
+//     });
+// });
 
 
-$(document).ready(function() {
-    var autoplaySlider = $('#sponsor--low').lightSlider({
-        auto:true,
-        pager:false,
-        autoWidth:true,
-        pauseOnHover:true,
-        loop:true,
-        controls:false,
-        slideMargin: 30,
-        onSliderLoad: function() {
-            $('#sponsor--low').removeClass('cS-hidden');
-        },
-        onBeforeSlide: function (el) {
-        } 
-    });
-});
+// $(document).ready(function() {
+//     var autoplaySlider = $('#sponsor--low').lightSlider({
+//         auto:true,
+//         pager:false,
+//         autoWidth:true,
+//         pauseOnHover:true,
+//         loop:true,
+//         controls:false,
+//         slideMargin: 30,
+//         onSliderLoad: function() {
+//             $('#sponsor--low').removeClass('cS-hidden');
+//         },
+//         onBeforeSlide: function (el) {
+//         } 
+//     });
+// });
 
-$(document).ready(function() {
-    var autoplaySlider = $('#partners').lightSlider({
-        auto:true,
-        pager:false,
-        autoWidth:true,
-        pauseOnHover:true,
-        loop:true,
-        controls:false,
-        slideMargin: 30,
-        onSliderLoad: function() {
-            $('#partners').removeClass('cS-hidden');
-        },
-        onBeforeSlide: function (el) {
-        } 
-    });
-});
+// $(document).ready(function() {
+//     var autoplaySlider = $('#partners').lightSlider({
+//         auto:true,
+//         pager:false,
+//         autoWidth:true,
+//         pauseOnHover:true,
+//         loop:true,
+//         controls:false,
+//         slideMargin: 30,
+//         onSliderLoad: function() {
+//             $('#partners').removeClass('cS-hidden');
+//         },
+//         onBeforeSlide: function (el) {
+//         } 
+//     });
+// });
 
-$(document).ready(function() {
-    var autoplaySlider = $('#organizadores').lightSlider({
-        auto:true,
-        pager:false,
-        autoWidth:true,
-        pauseOnHover:true,
-        loop:true,
-        controls:false,
-        slideMargin: 30,
-        onSliderLoad: function() {
-            $('#organizadores').removeClass('cS-hidden');
-        },
-        onBeforeSlide: function (el) {
-        } 
-    });
-});
 
-$(document).ready(function() {
-    var autoplaySlider = $('#cursos').lightSlider({
-        auto:true,
-        pager:false,
-        autoWidth:true,
-        pauseOnHover:true,
-        loop:true,
-        controls:false,
-        slideMargin: 30,
-        onSliderLoad: function() {
-            $('#organizadores').removeClass('cS-hidden');
-        },
-        onBeforeSlide: function (el) {
-        } 
-    });
-});
+// $(document).ready(function() {
+//     var autoplaySlider = $('#cursos').lightSlider({
+//         auto:true,
+//         pager:false,
+//         autoWidth:true,
+//         pauseOnHover:true,
+//         loop:true,
+//         controls:false,
+//         slideMargin: 30,
+//         onSliderLoad: function() {
+//             $('#organizadores').removeClass('cS-hidden');
+//         },
+//         onBeforeSlide: function (el) {
+//         } 
+//     });
+// });
 
 
 
-
-
-
+$(window).on('load', function(){
   console.clear();
 
 const wrapper = document.querySelector(".wrapper");
@@ -152,7 +134,6 @@ const boxes2 = gsap.utils.toArray(".box2");
 const loop2 = horizontalLoop(boxes2, {
   repeat: -1,
   speed: 0.3,
-  spaceBefore:50,
   draggable: true, // make it draggable
   center: true // active element is the one in the center of the container rather than th left edge
 });
@@ -167,6 +148,36 @@ const loop3 = horizontalLoop(boxes3, {
   draggable: true, // make it draggable
   center: true // active element is the one in the center of the container rather than th left edge
 });
+
+function myFunction(x) {
+  if (x.matches) { // If media query matches
+    const loop5 = horizontalLoop(boxes5, {
+      repeat: -1,
+      speed: 0.3,
+      spaceBefore:0,
+      draggable: true, // make it draggable
+      center: true // active element is the one in the center of the container rather than th left edge
+    });
+  } else {
+
+   
+  }
+}
+
+const wrapper5 = document.querySelector(".wrapper5");
+const boxes5 = gsap.utils.toArray(".box5");
+
+var x = window.matchMedia("(max-width: 700px)");
+myFunction(x); // Call listener function at run time
+x.addListener(myFunction); // Attach listener function on state changes
+
+
+
+
+
+
+
+
 
 
 /*
@@ -456,6 +467,7 @@ function horizontalLoop(items, config) {
 
 
 
+});
 
 
 
