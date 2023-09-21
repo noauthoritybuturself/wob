@@ -5,13 +5,37 @@
 */
 
 get_header(); ?>
-<div class="container-fluid"> 
-		<div class="row parallax background-image border-top border-bottom border-white border-4"></div>
+
+<div class="bg-white border-bottom border-top border-white border-4">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 text-center py-5 merch__text">
+					<h5>Vuelve por segundo año <strong>Watch out, Bitcoin! Un debate global</strong>, las jornadas sobre bitcoin y el mundo actual en castellano. <strong>El mejor debate sobre el futuro del dinero. Y el mejor lugar para aprender y cooperar con la comunidad bitcoin en España.</strong> Únete a más de 300 profesionales, académicos, emprendedores, aficionados y divulgadores de diversas disciplinas, de América y Europa, para aprender y debatir con rigor sobre aspectos prometedores y polémicos que rodean a la moneda digital por antonomasia.<br><br><strong>No se trata de un evento cripto enfocado al trading o criptoactivos.</strong> Es un evento sin ánimo de lucro en el que tanto la organización como los ponentes son voluntarios o cobran cantidades simbólicas.<strong> Es un evento 100% centrado en los asistentes/espectadores, con el objetivo de analizar, cooperar y aportar conocimiento.</strong><br><br>Como novedad, este año habrá <strong>talleres de iniciación, más colaboraciones con iniciativas basadas en bitcoin, networking y sesiones de micro abierto para contar tus proyectos.</strong><br><br><strong>Nuestro objetivo es que todo el que quiera pueda asistir. Si quieres asistir pero tienes problemas, déjanos un mensaje contándonos tu caso y te contaremos cómo conseguir entradas, ofertas, contenido de formación sobre bitcoin y otras sorpresas.</strong></h5>
+				</div>
+				<div class="col-md-6 text-center d-flex align-items-center">
+					<div class="mx-auto my-auto py-5">
+					<a href="#contacto_anchor" class="my-button white rounded">Solicitar información</a> 
+					</div>
+				</div>
+			</div>
+		</div>
 </div>
 
-<div class="container-fluid" id="tickets-wrap">
+<div class="container-fluid"> 
+		<div class="row parallax background-image border-top border-bottom border-white border-4" id="tickets-anchor"></div>
+</div>
+
+<div class="container-fluid" >
 	<div class="row">
 		<div class="col-md-12 text-center tickets mt-4 border-bottom border-white border-4 tickets-banner__section">
+		</div>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12 text-dark text-center p-3 bg-white">
+			<h6>NUEVO : Si naciste de 1999 (incluido) en adelante escribe el código JOVEN en el pago y obtén un 40% de descuento en tu entrada.
+			</h6>
 		</div>
 	</div>
 </div>
@@ -34,8 +58,8 @@ get_header(); ?>
 						<div class="stub">
 							<div class="ticket-buttons">
 								<h2 class="price"><?php echo $row['price'] ?>€</h2>
-								<a href="https://pagosinreglas.ddns.net/plugins/4cT5VGjiFJjPuFnRNLDdnBG1PPUPJ77CTJzXDkzF53cK/TicketTailor" class="my-button__pay white rounded">Pagar con BTC</a>
-								<a href="https://buytickets.at/wobitcoin/930659" class="my-button__pay orange rounded">Pagar con fiat</a> 
+								<a href="https://buytickets.at/wobitcoin/930659" class="my-button__pay white rounded">Comprar</a> 
+								<a href="https://pagosinreglas.ddns.net/plugins/4cT5VGjiFJjPuFnRNLDdnBG1PPUPJ77CTJzXDkzF53cK/TicketTailor" class="my-button__pay orange rounded">Pagar con BTC</a>
 							</div>
 						</div>
 					</div>
@@ -47,10 +71,34 @@ get_header(); ?>
 			<div class="arrows"></div>
 
 		</div>
-	<div class="background-image parallax--ponentes parallax border-bottom border-top border-white border-4 position-relative">
+		<div class="background-image--bottom parallax border-bottom border-top border-white border-4 position-relative">
 		<div class="container-lg">
 			<div class="row border-top">
-				<div class="col-md-12">
+				<div class="col-md-12" id="crowdfunding_anchor">
+					<h2>Crowdfunding</h2>
+				</div>
+			</div>
+		</div>
+	</div>		
+	<div class="bg-white border-bottom border-top border-white border-4">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 text-center py-5 merch__text">
+					<h5>¡ Hemos confirmado grabación en vídeo con una cámara ! Todavía necesitamos varias participaciones si queremos grabar con más cámaras y emitir en streaming. Recibe tu acceso a los vídeos colaborando en la campaña de recaudación del siguiente enlace. Muchas gracias por tu ayuda.</h5>
+				</div>
+				<div class="col-md-6 text-center d-flex align-items-center">
+					<div class="mx-auto my-auto py-5">
+					<a href="https://buy.stripe.com/14k0015L69Er9pu3cs" class="my-button white rounded">Solicitar acceso a grabación</a> 
+					<a href="https://pagos.dinerosinreglas.com/apps/C8MFBfM2ieQai6UXfmudfKoxPXj/crowdfund" class="my-button orange rounded">Donar en BTC</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="background-image parallax--ponentes parallax border-bottom border-top border-white border-4 position-relative">
+		<div class="container-lg ">
+			<div class="row border-top">
+				<div class="col-md-12" id="ponentes_anchor">
 					<h2>Ponentes</h2>
 				</div>
 			</div>
@@ -117,7 +165,7 @@ get_header(); ?>
 	<div class="background-image--middle parallax border-bottom border-top border-white border-4 position-relative">
 		<div class="container-lg">
 			<div class="row border-top">
-				<div class="col-md-12">
+				<div class="col-md-12" id="programa_anchor">
 					<h2>Programa</h2>
 				</div>
 			</div>
@@ -150,7 +198,7 @@ get_header(); ?>
 	<div class="background-image--middle2 parallax--sponsors parallax border-bottom border-top border-white border-4 position-relative">
 		<div class="container-lg">
 			<div class="row border-top">
-				<div class="col-md-12">
+				<div class="col-md-12" id="sponsors_anchor">
 					<h2>Sponsors</h2>
 				</div>
 			</div>
@@ -158,6 +206,8 @@ get_header(); ?>
 	</div>
 	<div class="container-fluid hotizontal-slider__section sponsors ponentes__section">
 		<div class="hotizontal-slider__container">
+		<div id="partners_anchor"></div>
+
 			<div id="sponsors" class="wrapper5">
 				<?php 	
 					$args = array(
@@ -185,9 +235,10 @@ get_header(); ?>
 
 			</div>
 		</div>
+
 		
 	</div>
-	<div class="background-image--small parallax--partners parallax border-bottom border-top border-white border-4 position-relative">
+	<div class="background-image--small parallax--partners parallax border-bottom border-top border-white border-4 position-relative" >
 		<div class="container-lg">
 			<div class="row border-top">
 				<div class="col-md-12">
@@ -252,7 +303,7 @@ get_header(); ?>
 	<div class="background-image--bottom parallax border-bottom border-top border-white border-4 position-relative">
 		<div class="container-lg">
 			<div class="row border-top">
-				<div class="col-md-12">
+				<div class="col-md-12" id="tienda_anchor">
 					<h2>Tienda y merch</h2>
 				</div>
 			</div>
@@ -262,7 +313,7 @@ get_header(); ?>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 text-center py-5 merch__text">
-					<h5>Consulta los artículos sobre WOB y apoya la causa de la asociación</h5>
+					<h5>Consulta los artículos sobre WOB y apoya la causa de la asociación. Puedes recoger tu pedido en el evento.</h5>
 				</div>
 				<div class="col-md-6 text-center d-flex align-items-center">
 					<div class="mx-auto my-auto py-5">
@@ -277,7 +328,7 @@ get_header(); ?>
 	<div class="background-image parallax--org parallax border-bottom border-top border-white border-4 position-relative">
 		<div class="container-lg">
 			<div class="row border-top">
-				<div class="col-md-12">
+				<div class="col-md-12" id="organizadores_anchor">
 					<h2>Organizadores</h2>
 				</div>
 			</div>
@@ -285,7 +336,7 @@ get_header(); ?>
 	</div>		
 	<div class="container-fluid sponsors hotizontal-slider__section">
 		<div class="hotizontal-slider__container hotizontal-slider__container--org">
-			<ul id="organizadores" class="wrapper4">
+			<div id="organizadores" class="wrapper4">
 				<?php 
 					$args = array(
 						'post_type' => 'organizadores',
@@ -308,7 +359,7 @@ get_header(); ?>
 						wp_reset_postdata();
 					endif;?>
 
-			</ul>
+			</div>
 		</div>
 	</div>
 
@@ -316,12 +367,11 @@ get_header(); ?>
 
 		<div class="container-lg">
 			<div class="row bg-white text-dark">
-				<div class="col-md-12 pt-5 pb-5">
+				<div class="col-md-12 pt-5 pb-5" id="contacto_anchor">
 					<div class="mb-5">
 						<div class="square"></div>
 						<h2>Contacto</h2>
 					</div>
-					<h5>Escribenos aqui y/o síguenos en redes</h5>
 					<?php  echo do_shortcode("[weforms id=222]")?>
 				</div>
 			</div>

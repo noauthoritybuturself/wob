@@ -1,7 +1,14 @@
 
 
 
+
 $(document).ready(function() {
+
+  $(".nav-item").on( "click", function() {
+
+    $('.navbar-collapse').collapse("hide");  
+  } );
+  
     var autoplaySlider = $('#programa').lightSlider({
         auto:false,
         pager:false,
@@ -42,144 +49,32 @@ $(document).ready(function() {
     });
 });
 
-
-// $(document).ready(function() {
-//     var autoplaySlider = $('#sponsors').lightSlider({
-//         auto:true,
-//         pager:false,
-//         autoWidth:true,
-//         pauseOnHover:true,
-//         loop:true,
-//         controls:false,
-//         slideMargin: 30,
-//         onSliderLoad: function() {
-//             $('#sponsors').removeClass('cS-hidden');
-//         },
-//         onBeforeSlide: function (el) {
-//         } 
-//     });
-// });
-
-
-// $(document).ready(function() {
-//     var autoplaySlider = $('#sponsor--low').lightSlider({
-//         auto:true,
-//         pager:false,
-//         autoWidth:true,
-//         pauseOnHover:true,
-//         loop:true,
-//         controls:false,
-//         slideMargin: 30,
-//         onSliderLoad: function() {
-//             $('#sponsor--low').removeClass('cS-hidden');
-//         },
-//         onBeforeSlide: function (el) {
-//         } 
-//     });
-// });
-
-// $(document).ready(function() {
-//     var autoplaySlider = $('#partners').lightSlider({
-//         auto:true,
-//         pager:false,
-//         autoWidth:true,
-//         pauseOnHover:true,
-//         loop:true,
-//         controls:false,
-//         slideMargin: 30,
-//         onSliderLoad: function() {
-//             $('#partners').removeClass('cS-hidden');
-//         },
-//         onBeforeSlide: function (el) {
-//         } 
-//     });
-// });
-
-
-// $(document).ready(function() {
-//     var autoplaySlider = $('#cursos').lightSlider({
-//         auto:true,
-//         pager:false,
-//         autoWidth:true,
-//         pauseOnHover:true,
-//         loop:true,
-//         controls:false,
-//         slideMargin: 30,
-//         onSliderLoad: function() {
-//             $('#organizadores').removeClass('cS-hidden');
-//         },
-//         onBeforeSlide: function (el) {
-//         } 
-//     });
-// });
-
-
-
 $(window).on('load', function(){
-  console.clear();
+loopFunction(gsap.utils.toArray(".box"));
+loopFunction(gsap.utils.toArray(".box2"));
+loopFunction(gsap.utils.toArray(".box3"),true);
+loopFunction(gsap.utils.toArray(".box4"),false,true);
+loopFunction(gsap.utils.toArray(".box5"));
+loopFunction(gsap.utils.toArray(".box6"));
 
-const wrapper = document.querySelector(".wrapper");
-const boxes = gsap.utils.toArray(".box");
-
-const loop = horizontalLoop(boxes, {
-  repeat: -1,
-  speed:0.3,
-  draggable: true, // make it draggable
-  center: true // active element is the one in the center of the container rather than th left edge
-});
-
-const wrapper2 = document.querySelector(".wrapper2");
-const boxes2 = gsap.utils.toArray(".box2");
-
-const loop2 = horizontalLoop(boxes2, {
-  repeat: -1,
-  speed: 0.3,
-  draggable: true, // make it draggable
-  center: true // active element is the one in the center of the container rather than th left edge
-});
-
-const wrapper3 = document.querySelector(".wrapper3");
-const boxes3 = gsap.utils.toArray(".box3");
-
-const loop3 = horizontalLoop(boxes3, {
-  repeat: -1,
-  speed: 0.3,
-  reversed:true,
-  draggable: true, // make it draggable
-  center: true // active element is the one in the center of the container rather than th left edge
-});
-
-function myFunction(x) {
+function loopFunction(wrapperBoxes,isReversed = false,isPaused = false) {
+  var size = wrapperBoxes.length * wrapperBoxes[0].clientWidth; // number of elements times their width
+  var x = window.matchMedia("(max-width: "+size+"px)");
   if (x.matches) { // If media query matches
-    const loop5 = horizontalLoop(boxes5, {
+    var loop = horizontalLoop(wrapperBoxes, {
       repeat: -1,
       speed: 0.3,
+      reversed: isReversed,
       spaceBefore:0,
+      paused:isPaused,
       draggable: true, // make it draggable
       center: true // active element is the one in the center of the container rather than th left edge
-    });
-  } else {
-
-   
+    });0
   }
+  x.addEventListener("change", () => {
+    loopFunction(wrapperBoxes);
+}); 
 }
-
-const wrapper5 = document.querySelector(".wrapper5");
-const boxes5 = gsap.utils.toArray(".box5");
-
-var x = window.matchMedia("(max-width: 700px)");
-myFunction(x); // Call listener function at run time
-x.addListener(myFunction); // Attach listener function on state changes
-
-
-
-
-
-
-
-
-
-
 /*
 This helper function makes a group of elements animate along the x-axis in a seamless, responsive loop.
 
@@ -399,14 +294,14 @@ function horizontalLoop(items, config) {
           tl.reversed(false);
           gsap.to(tl, {
             ease: "power1.in",
-            duration: 0.25,
+            duration: 1,
             timeScale: 1
           });
         } else {
           tl.reversed(true);
           gsap.to(tl, {
             ease: "power1.in",
-            duration: 0.25,
+            duration: 1,
             timeScale: -1
           });
         }

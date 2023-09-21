@@ -16,6 +16,7 @@
 
 					<ul class="list-unstyled">
 						<li><a href="https://twitter.com/Wo_Bitcoin">Twitter</a></li>
+						<li><a href="https://instagram.com/Wo_Bitcoin">Instagram</a></li>
 					</ul>
 					
 				</div>

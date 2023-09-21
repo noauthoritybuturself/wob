@@ -18,7 +18,10 @@
 }
 
 
-
+.lds-dots div{
+  color: white !important;
+  background: white !important;
+}
 
 body{
   color:white;
@@ -35,6 +38,19 @@ body h4,
 body h5,
 body h6 {
 	font-family: 'Overpass', sans-serif !important;
+}
+
+.navbar{
+  border-bottom: solid white 4px;
+
+}
+
+.navbar .nav-link{
+  color:white !important;
+}
+
+.navbar .nav-link:hover{
+  text-decoration: underline;
 }
 
 h1 {
@@ -64,6 +80,10 @@ h2 {
 .bg-orange{
   background: rgb(255,144,1);
   background: linear-gradient(180deg, rgba(255,144,1,1) 0%, rgba(255,208,48,1) 100%); 
+}
+
+.bg-orange-2{
+  background: rgb(255,144,1);
 }
 
 .background-image{
@@ -191,10 +211,8 @@ min-height: 400px;
 
 }
 
-.header__author {
-
-
-
+.header__link {
+  color: white;
 }
 
 .header__quote {
@@ -273,6 +291,10 @@ div.programa .single{
     border-radius: 4px;
     height:500px;
     color:black;
+}
+
+#organizadores .slide{
+  padding:4px;
 }
 
 .programa .lSSlideWrapper ul {
@@ -431,6 +453,15 @@ div.ponentes .single img{
   .my-button:hover {
     background-color: #fff;
     color: #ff9001;
+    border: 4px dashed #ff9001;
+;
+
+  }
+
+  .my-button.btc {
+
+    border: 4px solid #fff;
+
   }
 
   .my-button__pay {
@@ -450,7 +481,7 @@ div.ponentes .single img{
 
 
 
-  .my-button__pay.white{
+  .my-button__pay.white, .my-button.white{
     color:black;
     margin-top:0px;
     border: 2px solid grey;
@@ -478,6 +509,13 @@ div.ponentes .single img{
     background:#ffffff;
     color:#ff9001;
     border: 4px dashed #ff9001;
+  }
+
+  .my-button.orange:hover{
+    color:white;
+    background-color:#ff9001;
+    border-color: white;
+
   }
 
 
