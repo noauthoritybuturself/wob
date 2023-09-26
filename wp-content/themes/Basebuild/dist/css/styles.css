@@ -47,10 +47,25 @@ body h6 {
 
 .navbar .nav-link{
   color:white !important;
+  font-weight: bold;
+  letter-spacing: 1px;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease; 
 }
 
 .navbar .nav-link:hover{
-  text-decoration: underline;
+
+  /* text-decoration: underline; */
+  letter-spacing: .2rem;
+
+}
+
+.navbar-toggler {
+
+  border-color: #fff;
+
 }
 
 h1 {
@@ -71,15 +86,17 @@ h2 {
 .orange.button:hover{
   background-color:#ff9001;
   color: #fff;
+  border-style: solid;
 }
 
 .orange.button:hover span, .orange.button:hover{
   color:#ffffff !important;
+  border-style: solid;
 }
 
 .bg-orange{
   background: rgb(255,144,1);
-  background: linear-gradient(180deg, rgba(255,144,1,1) 0%, rgba(255,208,48,1) 100%); 
+  background: linear-gradient(180deg, rgba(255,144,1,1) 0%, rgba(255,208,48,1) 10%); 
 }
 
 .bg-orange-2{
@@ -206,13 +223,27 @@ min-height: 400px;
 
 .header__logo {
 
-  padding: 0 2em;
-
+  padding: 0 3.5em;
 
 }
 
 .header__link {
-  color: white;
+  
+  color:white !important;
+  font-weight: bold;
+  letter-spacing: 1px;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease; 
+  text-decoration: none;
+
+}
+
+.header__link:hover {
+  
+  letter-spacing: 0.2rem;
+
 }
 
 .header__quote {
@@ -293,8 +324,10 @@ div.programa .single{
     color:black;
 }
 
-#organizadores .slide{
-  padding:4px;
+#organizadores {
+  padding:10px;
+  width: 100%;
+  height: 100px;
 }
 
 .programa .lSSlideWrapper ul {
@@ -330,12 +363,39 @@ div.sponsors .slide{
     border-radius: 4px;
 }
 
+div.ponentes .slide{
+  color:black;
+  background-color:#ffffff;
+  text-align: center;
+  padding:20px;
+  height: 310px;
+  position: relative;
+  border-radius: 4px;
+  /* top:0px; */
+}
+
+
 #sponsors .slide{
 }
 
 div.sponsors .slide h5{
-    bottom:10px;
+    /* bottom:10px; */
+    font-weight: bold;
 }
+
+div.ponentes .slide p{
+  font-weight: 500;
+  color:#555;
+  font-size: 1rem;
+  width: 160px;
+  margin: auto;
+  position: relative;
+  top: 60px;
+  overflow: hidden;
+  line-height: 20px;
+
+}
+
 
 div.sponsors .single img{
 
@@ -348,6 +408,14 @@ div.ponentes .single img{
 
   border-radius: 10px;
 
+}
+
+.organizadores {
+
+  padding:10px;
+  margin: 4px;
+  width: 100%;
+  height: 100px;
 }
 
 .single h5{
@@ -451,10 +519,18 @@ div.ponentes .single img{
   }
 
   .my-button:hover {
+
     background-color: #fff;
     color: #ff9001;
-    border: 4px dashed #ff9001;
-;
+    border: 4px solid #fff;
+
+  }
+
+  .my-button--white a:hover {
+
+    background-color:#555;
+    color: #fff;
+    border: 4px solid #fff;
 
   }
 
@@ -489,6 +565,7 @@ div.ponentes .single img{
   }
 
   .my-button__pay.white:hover{
+
     color:rgb(255, 255, 255);
     background-color: grey;
 
@@ -503,6 +580,7 @@ div.ponentes .single img{
   .my-button__pay.orange:hover{
     background:#ff9001;
     color:#fff;
+    border-style: solid;
   }
 
   .my-button.orange{
@@ -514,7 +592,7 @@ div.ponentes .single img{
   .my-button.orange:hover{
     color:white;
     background-color:#ff9001;
-    border-color: white;
+    border-style: solid;
 
   }
 
@@ -552,6 +630,7 @@ div.ponentes .single img{
 
     background-color: #ff9001;
     color: #fff;
+    border-style: solid;
 
   }
 
@@ -573,6 +652,7 @@ div.ponentes .single img{
   .wob-thumbnail__name {
 
     height: 100%;
+
 
   }
 

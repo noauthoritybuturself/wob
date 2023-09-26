@@ -10,16 +10,93 @@ get_header(); ?>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 text-center py-5 merch__text">
-					<h5>Vuelve por segundo año <strong>Watch out, Bitcoin! Un debate global</strong>, las jornadas sobre bitcoin y el mundo actual en castellano. <strong>El mejor debate sobre el futuro del dinero. Y el mejor lugar para aprender y cooperar con la comunidad bitcoin en España.</strong> Únete a más de 300 profesionales, académicos, emprendedores, aficionados y divulgadores de diversas disciplinas, de América y Europa, para aprender y debatir con rigor sobre aspectos prometedores y polémicos que rodean a la moneda digital por antonomasia.<br><br><strong>No se trata de un evento cripto enfocado al trading o criptoactivos.</strong> Es un evento sin ánimo de lucro en el que tanto la organización como los ponentes son voluntarios o cobran cantidades simbólicas.<strong> Es un evento 100% centrado en los asistentes/espectadores, con el objetivo de analizar, cooperar y aportar conocimiento.</strong><br><br>Como novedad, este año habrá <strong>talleres de iniciación, más colaboraciones con iniciativas basadas en bitcoin, networking y sesiones de micro abierto para contar tus proyectos.</strong><br><br><strong>Nuestro objetivo es que todo el que quiera pueda asistir. Si quieres asistir pero tienes problemas, déjanos un mensaje contándonos tu caso y te contaremos cómo conseguir entradas, ofertas, contenido de formación sobre bitcoin y otras sorpresas.</strong></h5>
+					<h5><strong>Únete al mayor evento sobre bitcoin y mundo actual de habla hispana. Asiste en vivo u online.<br><br>+30 profesionales de América y Europa. Académicos, emprendedores y divulgadores de diversas disciplinas; +200 participantes reunidos para cooperar y analizar aspectos prometedores y polémicos de bitcoin.</strong><br><br><strong>Aprende de expertos en talleres de iniciación, colabora con iniciativas basadas en bitcoin, haz networking y, si quieres, toma el micro para contar tus dudas y proyectos.</strong><br><br><strong>Watch Out, Bitcoin! es un evento con objetivo social y formativo.</strong> Todo lo recaudado irá destinado a organizar más iniciativas de formación, debate y cooperación similares.</h5>
 				</div>
 				<div class="col-md-6 text-center d-flex align-items-center">
 					<div class="mx-auto my-auto py-5">
-					<a href="#contacto_anchor" class="my-button white rounded">Solicitar información</a> 
+					<a href="https://www.tickettailor.com/events/wobitcoin/1005375" class="my-button orange fw-bold rounded">Solicitar acceso online</a> 
 					</div>
 				</div>
 			</div>
 		</div>
 </div>
+
+
+<div class="background-image parallax--ponentes parallax border-bottom border-top border-white border-4 position-relative">
+		<div class="container-lg ">
+			<div class="row border-top">
+				<div class="col-md-12" id="ponentes_anchor">
+					<h2>Ponentes</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid hotizontal-slider__section sponsors ponentes ponentes__section">
+		<div class="hotizontal-slider__container">
+			<div id="ponentes" class="wrapper2 " >
+				<?php 
+				$args = array(
+					'post_type' => 'ponente',
+					'posts_per_page' => -1
+				);
+				$ponentes = get_posts($args);
+				if ($ponentes): 
+					foreach($ponentes as $ponente):  setup_postdata( $ponente );?>
+					<div class="slide box2">
+						<div class="single mb-4">
+							<a href="<?php echo get_field("url",$ponente->ID) ?>" class="text-decoration-none text-dark" target="_blank">
+								<img class="img-fluid img-thumbnail wob-thumbnail" src="<?php echo get_the_post_thumbnail_url($ponente->ID) ?>" alt="" >
+								<div class="wob-thumbnail__name">
+									<h5>
+											<?php echo $ponente->post_title ?>
+									</h5>
+									<p>
+										<?php echo $ponente->post_excerpt ?>
+									</p>
+								</div>
+							</a>
+						</div>
+				</div>
+					<?php endforeach;
+					wp_reset_postdata();
+				endif;?>
+
+			</div>
+		</div>
+		<div class="hotizontal-slider__container">
+			<div id="" class="wrapper3">
+				<?php 
+				$args = array(
+					'post_type' => 'ponente',
+					'post_status' => 'publish',
+					'posts_per_page' => -1
+				);
+				$ponentes = get_posts($args);
+				if ($ponentes): 
+					foreach($ponentes as $ponente):  setup_postdata( $ponente );?>
+					<div class="slide box3">
+						<div class="single mb-4">
+							<a href="<?php echo get_field("url",$ponente->ID) ?>" class="text-decoration-none text-dark" target="_blank">
+
+								<img class="img-fluid img-thumbnail wob-thumbnail" src="<?php echo get_the_post_thumbnail_url($ponente->ID) ?>" alt="" >
+								<h5>
+										<?php echo $ponente->post_title ?>
+								</h5>
+								<p>
+										<?php echo $ponente->post_excerpt ?>
+								</p>
+								
+							</a>
+						</div>
+				</div>
+					<?php endforeach;
+					wp_reset_postdata();
+				endif;?>
+
+			</div>
+		</div>
+	</div>
+	
 
 <div class="container-fluid"> 
 		<div class="row parallax background-image border-top border-bottom border-white border-4" id="tickets-anchor"></div>
@@ -28,14 +105,6 @@ get_header(); ?>
 <div class="container-fluid" >
 	<div class="row">
 		<div class="col-md-12 text-center tickets mt-4 border-bottom border-white border-4 tickets-banner__section">
-		</div>
-	</div>
-</div>
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12 text-dark text-center p-3 bg-white">
-			<h6>NUEVO : Si naciste de 1999 (incluido) en adelante escribe el código JOVEN en el pago y obtén un 40% de descuento en tu entrada.
-			</h6>
 		</div>
 	</div>
 </div>
@@ -70,12 +139,28 @@ get_header(); ?>
 			</div>
 			<div class="arrows"></div>
 
+	</div>
+	<div class="bg-white border-bottom border-top border-white border-4">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 text-center py-5 merch__text">
+					<h5><strong>Para ver el evento online, recibe el acceso a los vídeos colaborando en la campaña de recaudación para el streaming:</strong></h5>
+				</div>
+				<div class="col-md-6 text-center d-flex align-items-center">
+					<div class="mx-auto my-auto py-5">
+					<a href="https://buy.stripe.com/14k0015L69Er9pu3cs" class="my-button orange btc rounded">Reservar acceso online</a> 
+					<a href="https://pagos.dinerosinreglas.com/apps/C8MFBfM2ieQai6UXfmudfKoxPXj/crowdfund" class="my-button orange rounded">Reservar en BTC</a>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="background-image--bottom parallax border-bottom border-top border-white border-4 position-relative">
+	</div>
+
+	<div class="background-image--bottom parallax border-bottom border-top border-white border-4 position-relative">
 		<div class="container-lg">
 			<div class="row border-top">
-				<div class="col-md-12" id="crowdfunding_anchor">
-					<h2>Crowdfunding</h2>
+				<div class="col-md-12" id="">
+					<h2>Únete a la comundiad Wob</h2>
 				</div>
 			</div>
 		</div>
@@ -84,84 +169,18 @@ get_header(); ?>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 text-center py-5 merch__text">
-					<h5>¡ Hemos confirmado grabación en vídeo con una cámara ! Todavía necesitamos varias participaciones si queremos grabar con más cámaras y emitir en streaming. Recibe tu acceso a los vídeos colaborando en la campaña de recaudación del siguiente enlace. Muchas gracias por tu ayuda.</h5>
+					<h5>Consulta las herramientas disponibles para coordinarte con otros asistentes a las jornadas. Consigue entradas y abonos gracias a la cooperación:</h5>
 				</div>
 				<div class="col-md-6 text-center d-flex align-items-center">
 					<div class="mx-auto my-auto py-5">
-					<a href="https://buy.stripe.com/14k0015L69Er9pu3cs" class="my-button white rounded">Solicitar acceso a grabación</a> 
-					<a href="https://pagos.dinerosinreglas.com/apps/C8MFBfM2ieQai6UXfmudfKoxPXj/crowdfund" class="my-button orange rounded">Donar en BTC</a>
+						<a href="https://t.me/WoBitcoin" target="_blank" class="button my-button orange">Unirse a Telegram</a class="button">
+						<a href="https://help.wobitcoin.org/Explore" target="_blank" class="button my-button orange">Unirse a App colaborativa</a class="button">
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="background-image parallax--ponentes parallax border-bottom border-top border-white border-4 position-relative">
-		<div class="container-lg ">
-			<div class="row border-top">
-				<div class="col-md-12" id="ponentes_anchor">
-					<h2>Ponentes</h2>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="container-fluid hotizontal-slider__section sponsors ponentes__section">
-		<div class="hotizontal-slider__container">
-			<div id="ponentes" class="wrapper2 " >
-				<?php 
-				$args = array(
-					'post_type' => 'ponente',
-					'posts_per_page' => -1
-				);
-				$ponentes = get_posts($args);
-				if ($ponentes): 
-					foreach($ponentes as $ponente):  setup_postdata( $ponente );?>
-					<div class="slide box2">
-						<div class="single mb-4">
-							<a href="<?php echo get_field("url",$ponente->ID) ?>" class="text-decoration-none text-dark" target="_blank">
-								<img class="img-fluid img-thumbnail wob-thumbnail" src="<?php echo get_the_post_thumbnail_url($ponente->ID) ?>" alt="" >
-								<div class="wob-thumbnail__name">
-									<h5>
-											<?php echo $ponente->post_title ?>
-									</h5>
-								</div>
-							</a>
-						</div>
-				</div>
-					<?php endforeach;
-					wp_reset_postdata();
-				endif;?>
 
-			</div>
-		</div>
-		<div class="hotizontal-slider__container">
-			<div id="" class="wrapper3">
-				<?php 
-				$args = array(
-					'post_type' => 'ponente',
-					'post_status' => 'publish',
-					'posts_per_page' => -1
-				);
-				$ponentes = get_posts($args);
-				if ($ponentes): 
-					foreach($ponentes as $ponente):  setup_postdata( $ponente );?>
-					<div class="slide box3">
-						<div class="single mb-4">
-							<a href="<?php echo get_field("url",$ponente->ID) ?>" class="text-decoration-none text-dark" target="_blank">
-
-								<img class="img-fluid img-thumbnail wob-thumbnail" src="<?php echo get_the_post_thumbnail_url($ponente->ID) ?>" alt="" >
-								<h5>
-										<?php echo $ponente->post_title ?>
-								</h5>
-							</a>
-						</div>
-				</div>
-					<?php endforeach;
-					wp_reset_postdata();
-				endif;?>
-
-			</div>
-		</div>
-	</div>
 	<div class="background-image--middle parallax border-bottom border-top border-white border-4 position-relative">
 		<div class="container-lg">
 			<div class="row border-top">
@@ -276,6 +295,8 @@ get_header(); ?>
 		</div>
 	</div>
 	
+	
+
 	<div class="background-image--small parallax--partners parallax--partners--question parallax border-bottom border-top border-white border-4 position-relative">
 		<div class="container-lg">
 			<div class="row border-top">
@@ -290,7 +311,7 @@ get_header(); ?>
 	<div class="container text-white">
 		<div class="row">
 			<div class="col-md-6 text-center py-5 header__logo">
-					<h5 class="my-auto">Participa en WOB y ayuda a extender el debate sobre Bitcoin en España</h5>
+					<h5 class="my-auto">Ya está cerrada la campaña para nuevos sponsors presenciales 2023. Aún puedes apoyar la campaña de streaming y aparecer en los vídeos.</h5>
 			</div>
 			<div class="col-md-6 text-center d-flex align-items-center">
 				<div class="mx-auto my-auto py-5">
@@ -313,7 +334,7 @@ get_header(); ?>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 text-center py-5 merch__text">
-					<h5>Consulta los artículos sobre WOB y apoya la causa de la asociación. Puedes recoger tu pedido en el evento.</h5>
+					<h5>Consulta los artículos sobre WOB y apoya la causa. Puedes recoger tu pedido en el evento.</h5>
 				</div>
 				<div class="col-md-6 text-center d-flex align-items-center">
 					<div class="mx-auto my-auto py-5">
@@ -345,16 +366,11 @@ get_header(); ?>
 					$organizadores = get_posts($args);
 					if ($organizadores): 
 						foreach($organizadores as $organizador):  setup_postdata( $organizador );?>
-					<div class="slide box4">
-						<div class="single mb-4">
-							<img class="img-fluid img-thumbnail wob-thumbnail" src="<?php echo get_the_post_thumbnail_url($organizador->ID) ?>" alt="" class="img-fluid">
-							<h5>
-								<a href="<?php echo get_field("url",$organizador->ID) ?>" class="text-decoration-none text-dark" target="_blank">
-								<?php echo $organizador->post_title ?>
-								</a>
-							</h5>
-						</div>
-					</div>
+							<div class="slide box4 organizadores">
+									<h5>
+										<?php echo $organizador->post_title ?>
+									</h5>
+							</div>
 					<?php endforeach;
 						wp_reset_postdata();
 					endif;?>

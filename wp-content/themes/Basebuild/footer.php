@@ -32,7 +32,7 @@
 		<div class="row baseline-content firma">
 			<div class="col-md-12">
 				<div class="float-end">
-					<span class="text-white"><a href="https://watchoutfreedom.com">© Watch Out, Bitcoin! by Watch Out, Freedom! - Todos los derechos reservados</a></span>
+					<span class="text-white"><a href="https://watchoutfreedom.com">© Watch Out, Bitcoin! by Watch Out, Freedom!</a></span>
 					<img class="img-fluid footer__logo" width="70" src="<?php echo get_theme_file_uri() ?>/dist/img/icon-footer.png"" alt="">
 				</div>
 			</div>
