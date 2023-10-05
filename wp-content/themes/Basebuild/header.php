@@ -65,6 +65,18 @@
 		  	<a class="nav-link"  href="#contacto_anchor">Contacto</a>
           </li>
         </ul></div>
+
+		<div class="social-nav">
+		<ul class="navbar-nav">
+
+			<li alt="instagram" class="nav-item"><a href="https://instagram.com/Wo_Bitcoin"><i class="fab fa-instagram"></i></a></li>
+			<li alt="twitter" class="nav-item"><a href="https://twitter.com/Wo_Bitcoin"><i class="fab fa-twitter"></i></a></li>	
+			<li alt="telegram" class="nav-item"><a href="https://t.me/WoBitcoin"><i class="fab fa-telegram"></i></a></li>
+			<li alt="buttons" class="nav-item"><a href="https://help.wobitcoin.org/Explore#?zoom=5&lat=40.2476&lng=-3.5713"><img src="<?php echo get_theme_file_uri() ?>/dist/img/buttons.png" alt="" class="button-icon"></a></li>	
+			<li alt="youtube" class="nav-item"><a href="https://www.youtube.com/@WOBitcoin"><i class="fab fa-youtube"></i></a></li>	
+			</ul>
+		</div>
+
     </div>
   </nav>
 	<div class="container text-white">
@@ -89,4 +101,4 @@
 		</div>
 	</div>
 
-	
+	<?php include get_template_directory() . '/modal.php'; ?>
