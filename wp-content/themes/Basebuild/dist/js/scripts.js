@@ -1,15 +1,26 @@
 
 
 
+var autoplaySlider;
+
+
 
 $(document).ready(function() {
+
+  $(".wpuf_submit_961").removeAttr("disabled");
+
+  contentDiv = document.getElementById('programa_anchor');
+  var fired = 0;
+
+
+window.addEventListener('scroll', onScrollHandler);
 
   $(".nav-item").on( "click", function() {
 
     $('.navbar-collapse').collapse("hide");  
   } );
   
-    var autoplaySlider = $('#programa').lightSlider({
+    autoplaySlider = $('#programa').lightSlider({
         auto:false,
         pager:false,
         loop:false,
@@ -28,7 +39,7 @@ $(document).ready(function() {
                 settings: {
                     item:2,
                     pause:1000,
-                    speed:1000,
+                    speed:2000,
                     enableTouch:true,
                     enableDrag:true,            
                     loop:true          
@@ -39,7 +50,7 @@ $(document).ready(function() {
                 settings: {
                     item:1,
                     pause:1000,
-                    speed:1000,
+                    speed:2000,
                     enableTouch:true,
                     enableDrag:true,            
                     loop:true
@@ -47,13 +58,27 @@ $(document).ready(function() {
             }
         ]
     });
+
+
+    function onScrollHandler(event) {
+      //console.log(`Pixels from top: ${contentDiv.getBoundingClientRect().top}`);
+      if(contentDiv.getBoundingClientRect().top  < 0 && fired == 0 && screen.width < 1020){
+        autoplaySlider.goToNextSlide();
+        autoplaySlider.goToNextSlide();
+        autoplaySlider.goToNextSlide();
+        fired = 1;
+      }
+    }
 });
+
+
+
 
 $(window).on('load', function(){
 loopFunction(gsap.utils.toArray(".box"));
 loopFunction(gsap.utils.toArray(".box2"));
 loopFunction(gsap.utils.toArray(".box3"),true);
-loopFunction(gsap.utils.toArray(".box4"),false,true);
+//loopFunction(gsap.utils.toArray(".box4"),false,true);
 loopFunction(gsap.utils.toArray(".box5"));
 loopFunction(gsap.utils.toArray(".box6"));
 
