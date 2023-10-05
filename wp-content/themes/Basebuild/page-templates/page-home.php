@@ -148,7 +148,7 @@ get_header(); ?>
 				</div>
 				<div class="col-md-6 text-center d-flex align-items-center">
 					<div class="mx-auto my-auto py-5">
-					<a href="https://buy.stripe.com/14k0015L69Er9pu3cs" class="my-button orange btc rounded">Reservar acceso online</a> 
+					<a href="https://buy.stripe.com/14k0015L69Er9pu3cs" class="my-button orange btc rounded mb-2">Reservar acceso online</a> 
 					<a href="https://pagos.dinerosinreglas.com/apps/C8MFBfM2ieQai6UXfmudfKoxPXj/crowdfund" class="my-button orange rounded">Reservar en BTC</a>
 					</div>
 				</div>
@@ -171,9 +171,9 @@ get_header(); ?>
 				<div class="col-md-6 text-center py-5 merch__text">
 					<h5>Consulta las herramientas disponibles para coordinarte con otros asistentes a las jornadas. Consigue entradas y abonos gracias a la cooperación:</h5>
 				</div>
-				<div class="col-md-6 text-center d-flex align-items-center">
+				<div class="col-md-text-center d-flex align-items-center">
 					<div class="mx-auto my-auto py-5">
-						<a href="https://t.me/WoBitcoin" target="_blank" class="button my-button orange">Unirse a Telegram</a class="button">
+						<a href="https://t.me/WoBitcoin" target="_blank" class="button my-button orange mb-2">Unirse a Telegram</a class="button">
 						<a href="https://help.wobitcoin.org/Explore" target="_blank" class="button my-button orange">Unirse a App colaborativa</a class="button">
 					</div>
 				</div>
@@ -192,6 +192,12 @@ get_header(); ?>
 	</div>
 	<div class="container-lg mt-5">
 		<div class="row programa">
+			<div class="offset-md-3 col-md-6">
+
+
+			<a class="my-button rounded fw-bold mb-5" data-bs-toggle="modal" data-bs-target="#exampleModal">Descarga la guía wob23</a>
+			</div>
+
 			<ul id="programa">
 				<?php $programa = get_field('programa'); 
 					$dias = ['6 de Octubre','7 de Octubre','8 de Octubre'];
@@ -355,9 +361,9 @@ get_header(); ?>
 			</div>
 		</div>
 	</div>		
-	<div class="container-fluid sponsors hotizontal-slider__section">
-		<div class="hotizontal-slider__container hotizontal-slider__container--org">
-			<div id="organizadores" class="wrapper4">
+	<div class="container-fluid sponsors">
+		<div class="">
+			<div id="organizadores" class="">
 				<?php 
 					$args = array(
 						'post_type' => 'organizadores',
@@ -366,10 +372,13 @@ get_header(); ?>
 					$organizadores = get_posts($args);
 					if ($organizadores): 
 						foreach($organizadores as $organizador):  setup_postdata( $organizador );?>
-							<div class="slide box4 organizadores">
-									<h5>
-										<?php echo $organizador->post_title ?>
-									</h5>
+							<div class="slide organizadores m-2">
+							<img class="img-fluid img-thumbnail wob-thumbnail" src="<?php echo get_the_post_thumbnail_url($organizador->ID) ?>" alt="" class="img-fluid">
+							<h5>
+								<a href="<?php echo get_field("url",$organizador->ID) ?>" class="text-decoration-none text-dark" target="_blank">
+								<?php echo $organizador->post_title ?>
+								</a>
+							</h5>
 							</div>
 					<?php endforeach;
 						wp_reset_postdata();
@@ -388,7 +397,7 @@ get_header(); ?>
 						<div class="square"></div>
 						<h2>Contacto</h2>
 					</div>
-					<?php  echo do_shortcode("[weforms id=222]")?>
+					<?php  echo do_shortcode("[weps id=222]")?>
 				</div>
 			</div>
 		</div>
